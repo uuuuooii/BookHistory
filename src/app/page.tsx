@@ -1,10 +1,10 @@
-import React from 'react'
-import MainPage from './main/page'
+import React from 'react';
+import DetailPage from './detail/page';
 
-const Page = () => {
-    return (
-        <MainPage />
-    )
+function Page() {
+  return (
+    <DetailPage />
+  );
 }
 
-export default Page
+export default Page;
