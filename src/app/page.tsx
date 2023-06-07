@@ -1,9 +1,9 @@
 import React from 'react';
-import DetailPage from './detail/page';
+import Main from '../templates/main';
 
 function Page() {
   return (
-    <DetailPage />
+    <Main />
   );
 }
 

@@ -1,7 +1,9 @@
 import { ReactNode } from 'react';
-import { ThemeProvider } from '../common/styles/theme/themeProvider';
+import { ThemeProvider } from '../common/provider/themeProvider';
 import theme from '../common/styles/theme';
-import Header from '../components/header';
+import Header from '../templates/header';
+import globals from './globals';
+import { Global } from '../common/provider/styleProvider';
 
 export const metadata = {
   title: 'BookHistory',
@@ -14,13 +16,14 @@ export default function RootLayout({
   children: ReactNode
 }) {
   return (
-    <html lang="en">
-      <body>
-        <ThemeProvider theme={theme}>
+    <ThemeProvider theme={theme}>
+      <html lang="en">
+        <body style={{ background: '#0C0C0C' }}>
+          <Global styles={globals} />
           <Header />
           {children}
-        </ThemeProvider>
-      </body>
-    </html>
+        </body>
+      </html>
+    </ThemeProvider>
   );
 }
