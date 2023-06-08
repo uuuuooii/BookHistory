@@ -2,6 +2,10 @@
 
 import styled from '@emotion/styled';
 
+export const Wrapper = styled.main`
+  padding-top: 68px;
+`;
+
 export const Picture = styled.picture`
   position: relative;
   display: block;
@@ -14,8 +18,14 @@ export const Picture = styled.picture`
   }
 `;
 
-export const Wrapper = styled.section``;
-
-export const Title = styled.div`
+export const TitleContent = styled.div`
   padding-top: 30px;
+`;
+
+export const Title = styled.h3`
+  color: ${({ theme }) => theme.colors.neutral.white};
+`;
+
+export const Desc = styled.p`
+  color: ${({ theme }) => theme.colors.neutral.white};
 `;
