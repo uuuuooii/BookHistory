@@ -3,7 +3,7 @@
 import styled from '@emotion/styled';
 
 export const Wrapper = styled.main`
-  padding-top: 68px;
+  /* padding-top: 68px; */
 `;
 
 export const Picture = styled.picture`
@@ -19,13 +19,17 @@ export const Picture = styled.picture`
 `;
 
 export const TitleContent = styled.div`
+  display: grid;
+  gap: 10px;
   padding-top: 30px;
 `;
 
 export const Title = styled.h3`
   color: ${({ theme }) => theme.colors.neutral.white};
+  font-size: 22px;
 `;
 
 export const Desc = styled.p`
   color: ${({ theme }) => theme.colors.neutral.white};
+  font-size: 14px;
 `;

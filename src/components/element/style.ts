@@ -10,23 +10,20 @@ export const Wrapper = styled.ul`
   border-radius: 10px;
 `;
 
-export const Item = styled.li`
-  display: grid;
-  gap: 10px;
-`;
-
 export const ImageWrapper = styled.picture`
   position: relative;
+  display: block;
   width: 100%;
-  height: 100px;
+  height: 150px;
   img {
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+    border-radius: 10px 10px 0 0;
   }
 `;
 
 export const Contents = styled.div`
-  padding: 20px;
+  display: grid;
+  gap: 5px;
+  padding: 15px;
 `;
 
 export const ItemTitle = styled.a`
@@ -37,4 +34,18 @@ export const ItemTitle = styled.a`
 export const Date = styled.div`
   display: flex;
   gap: 10px;
+  font-size: 13px;
+`;
+
+export const Time = styled.p`
+  color: ${({ theme }) => theme.colors.gray.gray02};
+`;
+
+export const Day = styled.p`
+  color: ${({ theme }) => theme.colors.gray.gray02};
+`;
+
+export const Desc = styled.p`
+  color: ${({ theme }) => theme.colors.gray.gray01};
+  font-size: 13px;
 `;

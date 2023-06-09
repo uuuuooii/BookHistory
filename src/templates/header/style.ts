@@ -2,14 +2,15 @@
 
 import styled from '@emotion/styled';
 
-export const Wrapper = styled.header`
+export const Wrapper = styled.header<{ isShow: boolean }>`
   display: flex;
   align-items: center;
   position: fixed;
   width: 100%;
   height: 68px;
   padding: 0 56px;
-  background: ${({ theme }) => theme.colors.neutral.black};
+  background: ${({ theme, isShow }) =>
+    isShow ? theme.colors.neutral.black : theme.colors.gray.gray01};
   z-index: 10;
 `;
 
