@@ -6,7 +6,7 @@ import * as S from './style';
 
 function Main() {
   return (
-    <S.Wrapper>
+    <div>
       <S.Picture>
         <Image src="/images/background.jpeg" alt="book" fill />
       </S.Picture>
@@ -17,7 +17,7 @@ function Main() {
         </S.TitleContent>
         <Element />
       </Inner>
-    </S.Wrapper>
+    </div>
   );
 }
 

@@ -2,10 +2,6 @@
 
 import styled from '@emotion/styled';
 
-export const Wrapper = styled.main`
-  /* padding-top: 68px; */
-`;
-
 export const Picture = styled.picture`
   position: relative;
   display: block;
@@ -13,8 +9,18 @@ export const Picture = styled.picture`
   height: 300px;
   background-position: 50%;
   background-size: cover;
+
   img {
     object-fit: cover;
+    /* background-image: linear-gradient(
+      180deg,
+      hsla(0, 0%, 8%, 0) 0,
+      hsla(0, 0%, 8%, 0.15) 15%,
+      hsla(0, 0%, 8%, 0.35) 29%,
+      hsla(0, 0%, 8%, 0.58) 44%,
+      #141414 68%,
+      #141414
+    ); */
   }
 `;
 

@@ -10,7 +10,13 @@ export const Wrapper = styled.header<{ isShow: boolean }>`
   height: 68px;
   padding: 0 56px;
   background: ${({ theme, isShow }) =>
-    isShow ? theme.colors.neutral.black : theme.colors.gray.gray01};
+    isShow
+      ? theme.colors.neutral.black
+      : `linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.7) 10%,
+    transparent
+  )`};
   z-index: 10;
 `;
 
