@@ -1,9 +1,9 @@
 import React from 'react';
 
-function DetailPage() {
+const DetailPage = () => {
   return (
     <div>pageddd</div>
   );
-}
+};
 
 export default DetailPage;

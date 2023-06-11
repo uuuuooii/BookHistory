@@ -5,12 +5,12 @@ interface InnerProps {
   children: ReactNode;
 }
 
-function Inner({ children }: InnerProps) {
+const Inner = ({ children }: InnerProps) => {
   return (
     <Wrapper>
       {children}
     </Wrapper>
   );
-}
+};
 
 export default Inner;

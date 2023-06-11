@@ -2,7 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import * as S from './style';
 
-function Element() {
+const Element = () => {
   return (
     <S.Wrapper>
       <li>
@@ -28,6 +28,6 @@ function Element() {
     </S.Wrapper>
 
   );
-}
+};
 
 export default Element;

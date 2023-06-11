@@ -6,7 +6,6 @@ export const Wrapper = styled.ul`
   width: 300px;
   height: 350px;
   background: ${({ theme }) => theme.colors.neutral.white};
-  margin-top: 20px;
   border-radius: 10px;
 `;
 

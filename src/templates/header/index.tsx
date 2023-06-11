@@ -4,7 +4,7 @@ import Link from 'next/link';
 import React, { useEffect, useState } from 'react';
 import * as S from './style';
 
-function Header() {
+const Header = () => {
   const [isShow, setIsShow] = useState(false);
 
   const scrollHandler = () => {
@@ -36,6 +36,6 @@ function Header() {
     </S.Wrapper>
 
   );
-}
+};
 
 export default Header;

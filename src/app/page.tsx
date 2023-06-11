@@ -1,10 +1,10 @@
 import React from 'react';
 import Main from '../templates/main';
 
-function Page() {
+const Page = () => {
   return (
     <Main />
   );
-}
+};
 
 export default Page;

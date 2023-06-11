@@ -1,5 +1,5 @@
 const neutral = {
-  black: '#0C0C0C',
+  black: '#141414',
   white: '#DADBDB',
 };
 
