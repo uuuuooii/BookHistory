@@ -1,15 +1,15 @@
 import React from 'react';
 import Image from 'next/image';
-import PostsData from '../../common/data';
+import PostsData from '@/common/data';
 import * as S from './style';
 
 const Element = () => {
   return (
     <S.Wrapper>
       {PostsData.map((item) => (
-        <S.PostsItem>
+        <S.PostsItem key={item.id}>
           <S.ImageWrapper>
-            <Image src={item.thumbnailUrl} alt="thumbnail-image" fill />
+            <Image src={item.img} alt="thumbnail-image" fill />
           </S.ImageWrapper>
           <S.Contents>
             <h3>
@@ -23,7 +23,7 @@ const Element = () => {
               <S.Day>{item.data}</S.Day>
             </S.Date>
             <div>
-              <S.Desc>{item.content}</S.Desc>
+              <S.Desc>{item.desc}</S.Desc>
             </div>
           </S.Contents>
         </S.PostsItem>

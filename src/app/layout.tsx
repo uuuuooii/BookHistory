@@ -1,9 +1,9 @@
 import React, { ReactNode } from 'react';
-import { ThemeProvider } from '../common/provider/themeProvider';
-import theme from '../common/styles/theme';
-import Header from '../templates/header';
+import { ThemeProvider } from '@/common/provider/themeProvider';
+import theme from '@/common/styles/theme';
+import Header from '@/templates/header';
 import globals from './globals';
-import { Global } from '../common/provider/styleProvider';
+import { Global } from '@/common/provider/styleProvider';
 
 export const metadata = {
   title: 'BookHistory',

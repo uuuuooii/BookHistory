@@ -6,7 +6,7 @@ export const Visual = styled.div`
   position: relative;
   display: block;
   width: 100%;
-  height: 300px;
+  height: 500px;
   background-image: linear-gradient(
       180deg,
       hsla(0, 0%, 8%, 0) 0,

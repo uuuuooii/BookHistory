@@ -5,7 +5,7 @@ import styled from '@emotion/styled';
 export const TitleContent = styled.div`
   display: grid;
   gap: 10px;
-  padding: 30px 0;
+  padding-bottom: 30px;
 `;
 
 export const Title = styled.h3`

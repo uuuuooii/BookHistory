@@ -1,6 +1,6 @@
 import React from 'react';
-import Element from '../../../components/element';
-import Inner from '../../../components/inner';
+import Element from '@/components/element';
+import Inner from '@/components/inner';
 import * as S from './style';
 
 const Posts = () => {
