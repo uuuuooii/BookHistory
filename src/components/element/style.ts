@@ -3,10 +3,17 @@
 import styled from '@emotion/styled';
 
 export const Wrapper = styled.ul`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  border-radius: 10px;
+`;
+
+export const PostsItem = styled.li`
   width: 300px;
   height: 350px;
-  background: ${({ theme }) => theme.colors.neutral.white};
   border-radius: 10px;
+  background: ${({ theme }) => theme.colors.neutral.white};
 `;
 
 export const ImageWrapper = styled.picture`

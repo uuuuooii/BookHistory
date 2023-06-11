@@ -1,30 +1,33 @@
 import React from 'react';
 import Image from 'next/image';
+import PostsData from '../../common/data';
 import * as S from './style';
 
 const Element = () => {
   return (
     <S.Wrapper>
-      <li>
-        <S.ImageWrapper>
-          <Image src="/images/thumbnail.png" alt="thumbnail-image" fill />
-        </S.ImageWrapper>
-        <S.Contents>
-          <h3>
-            <S.ItemTitle href="#">개발자가 알아두면 좋은 ‘재현 가능한 예제’ 활용법</S.ItemTitle>
-          </h3>
-          <div>
-            <div>⭐️⭐️⭐️</div>
-          </div>
-          <S.Date>
-            <S.Time>10분</S.Time>
-            <S.Day>2020.05.05</S.Day>
-          </S.Date>
-          <div>
-            <S.Desc>자바스크립트를 활용하는 웹 개발자부터 SQL을 활용하는 데이터 분석가까지.....</S.Desc>
-          </div>
-        </S.Contents>
-      </li>
+      {PostsData.map((item) => (
+        <S.PostsItem>
+          <S.ImageWrapper>
+            <Image src={item.thumbnailUrl} alt="thumbnail-image" fill />
+          </S.ImageWrapper>
+          <S.Contents>
+            <h3>
+              <S.ItemTitle href="#">{item.title}</S.ItemTitle>
+            </h3>
+            <div>
+              <div>{item.star}</div>
+            </div>
+            <S.Date>
+              <S.Time>{item.readingTime}</S.Time>
+              <S.Day>{item.data}</S.Day>
+            </S.Date>
+            <div>
+              <S.Desc>{item.content}</S.Desc>
+            </div>
+          </S.Contents>
+        </S.PostsItem>
+      ))}
     </S.Wrapper>
 
   );
