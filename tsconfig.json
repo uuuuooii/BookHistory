@@ -30,7 +30,7 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "src/common/api/db.ts",
-    "src/models/Post.ts"
+    "src/common/api/models/Post.ts"
   ],
   "exclude": ["node_modules"]
 }

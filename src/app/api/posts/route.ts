@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 import connect from '@/common/api/db';
-import Post from '@/models/Post';
+import Post from '@/common/api/models/Post';
 
 export const GET = async () => {
   try {

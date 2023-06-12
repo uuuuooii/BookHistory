@@ -1,9 +1,10 @@
 import React from 'react';
+import Detail from '@/templates/detail';
 
-const DetailPage = () => {
+const detailPage = () => {
   return (
-    <div>pageddd</div>
+    <Detail />
   );
 };
 
-export default DetailPage;
+export default detailPage;

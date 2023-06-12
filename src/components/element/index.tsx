@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
 import * as S from './style';
 
 interface ElementProps {
@@ -13,6 +14,7 @@ interface ElementProps {
 }
 
 const Element = () => {
+  const router = useRouter();
   const [postData, setPostData] = useState<ElementProps[]>([]);
 
   useEffect(() => {
@@ -29,7 +31,7 @@ const Element = () => {
   return (
     <S.Wrapper>
       {postData.map((item) => (
-        <S.PostsItem key={item.title}>
+        <S.PostsItem key={item.title} onClick={() => router.push('/detail')}>
           <S.ImageWrapper>
             <Image src={item.img} alt="thumbnail-image" fill />
           </S.ImageWrapper>
