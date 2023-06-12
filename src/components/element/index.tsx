@@ -1,13 +1,35 @@
-import React from 'react';
+'use client';
+
+import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
-import PostsData from '@/common/data';
 import * as S from './style';
 
+interface ElementProps {
+  id: string;
+  content: string;
+  desc: string;
+  img: string;
+  title: string;
+}
+
 const Element = () => {
+  const [postData, setPostData] = useState<ElementProps[]>([]);
+
+  useEffect(() => {
+    const getPostData = async () => {
+      const res = await fetch('http://localhost:3000/api/posts', {
+        cache: 'no-store'
+      });
+      const data = await res.json();
+      setPostData(data);
+    };
+    getPostData();
+  }, []);
+
   return (
     <S.Wrapper>
-      {PostsData.map((item) => (
-        <S.PostsItem key={item.id}>
+      {postData.map((item) => (
+        <S.PostsItem key={item.title}>
           <S.ImageWrapper>
             <Image src={item.img} alt="thumbnail-image" fill />
           </S.ImageWrapper>
@@ -16,11 +38,11 @@ const Element = () => {
               <S.ItemTitle href="#">{item.title}</S.ItemTitle>
             </h3>
             <div>
-              <div>{item.star}</div>
+              {/* <div>{item.star}</div> */}
             </div>
             <S.Date>
-              <S.Time>{item.readingTime}</S.Time>
-              <S.Day>{item.data}</S.Day>
+              {/* <S.Time>{item.readingTime}</S.Time>
+              <S.Day>{item.data}</S.Day> */}
             </S.Date>
             <div>
               <S.Desc>{item.desc}</S.Desc>

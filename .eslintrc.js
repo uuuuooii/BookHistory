@@ -21,5 +21,7 @@ module.exports = {
     'react/function-component-definition': 'off',
     'no-confusing-arrow': 'off',
     'implicit-arrow-linebreak': 'off',
+    'comma-dangle': 'off',
+    'operator-linebreak': 'off',
   },
 };

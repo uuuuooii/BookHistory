@@ -1,16 +1,17 @@
 import { NextResponse } from 'next/server';
 import connect from '@/common/api/db';
-import Post from '@/models/post';
+import Post from '@/models/Post';
 
 export const GET = async () => {
   try {
     await connect();
 
     const posts = await Post.find();
-    console.log('Posts:', posts);
-    return new NextResponse(posts, { status: 200 });
+
+    return new NextResponse(JSON.stringify(posts), { status: 200 });
   } catch (err) {
-    console.error(err); // 오류 로깅
-    return new NextResponse('Database Error!', { status: 500 });
+    return new NextResponse('Database Error', { status: 500 });
   }
 };
+
+export const POST = async () => {};
