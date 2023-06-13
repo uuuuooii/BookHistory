@@ -29,8 +29,8 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "src/common/api/db.ts",
-    "src/common/api/models/Post.ts"
+    "src/common/api/mongoose/db.ts",
+    "src/common/api/mongoose/schema/post.ts"
   ],
   "exclude": ["node_modules"]
 }

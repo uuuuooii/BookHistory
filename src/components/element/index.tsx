@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
+import axios from 'axios';
 import * as S from './style';
 
 interface ElementProps {
@@ -19,15 +20,12 @@ const Element = () => {
 
   useEffect(() => {
     const getPostData = async () => {
-      const res = await fetch('http://localhost:3000/api/posts', {
-        cache: 'no-store'
-      });
-      const data = await res.json();
-      setPostData(data);
+      const res = await axios.get('http://localhost:3000/api/posts');
+      setPostData(res.data);
     };
     getPostData();
   }, []);
-
+  console.log(postData);
   return (
     <S.Wrapper>
       {postData.map((item) => (
