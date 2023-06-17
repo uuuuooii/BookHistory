@@ -6,7 +6,7 @@ import { useRouter } from 'next/navigation';
 import axios from 'axios';
 import * as S from './style';
 
-interface ElementProps {
+interface PostDataProps {
   id: string;
   content: string;
   desc: string;
@@ -14,9 +14,13 @@ interface ElementProps {
   title: string;
 }
 
-const Element = () => {
+interface ElementProps {
+  isUpload?: boolean
+}
+
+const Element = ({ isUpload }: ElementProps) => {
   const router = useRouter();
-  const [postData, setPostData] = useState<ElementProps[]>([]);
+  const [postData, setPostData] = useState<PostDataProps[]>([]);
 
   useEffect(() => {
     const getPostData = async () => {
@@ -24,8 +28,8 @@ const Element = () => {
       setPostData(res.data);
     };
     getPostData();
-  }, []);
-  console.log(postData);
+  }, [isUpload]);
+
   return (
     <S.Wrapper>
       {postData.map((item) => (

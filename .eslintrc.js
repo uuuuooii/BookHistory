@@ -23,5 +23,6 @@ module.exports = {
     'implicit-arrow-linebreak': 'off',
     'comma-dangle': 'off',
     'operator-linebreak': 'off',
+    'react/require-default-props': 'off',
   },
 };
