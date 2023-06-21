@@ -8,10 +8,11 @@ import * as S from './style';
 
 interface PostDataProps {
   id: string;
-  content: string;
+  title: string;
+  star: string;
   desc: string;
   img: string;
-  title: string;
+  content: string;
 }
 
 interface ElementProps {
@@ -42,14 +43,14 @@ const Element = ({ isUpload }: ElementProps) => {
               <S.ItemTitle href="#">{item.title}</S.ItemTitle>
             </h3>
             <div>
-              {/* <div>{item.star}</div> */}
+              <div>{item.star}</div>
             </div>
             <S.Date>
               {/* <S.Time>{item.readingTime}</S.Time>
               <S.Day>{item.data}</S.Day> */}
             </S.Date>
             <div>
-              <S.Desc>{item.desc}</S.Desc>
+              <S.Desc>{item.content}</S.Desc>
             </div>
           </S.Contents>
         </S.PostsItem>

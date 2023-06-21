@@ -11,6 +11,7 @@ const Admin = () => {
   const titleInput = useInput();
   const imageInput = useInput();
   const contentInput = useInput();
+  const starInput = useInput();
   const [isUpload, setIsUpload] = useState(false);
 
   const onSubmit: React.FormEventHandler<HTMLFormElement> = async (e) => {
@@ -33,6 +34,7 @@ const Admin = () => {
           <Preview isUpload={isUpload} />
           <S.InputWrapper>
             <input placeholder="title" value={titleInput.inputValue} onChange={titleInput.onChangeInput} />
+            <input placeholder="star" value={starInput.inputValue} onChange={starInput.onChangeInput} />
             <input placeholder="image" value={imageInput.inputValue} onChange={imageInput.onChangeInput} />
             <input placeholder="content" value={contentInput.inputValue} onChange={contentInput.onChangeInput} />
             <S.Button type="submit">submit</S.Button>

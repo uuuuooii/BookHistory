@@ -8,6 +8,10 @@ const postSchema = new Schema(
       type: String,
       required: true,
     },
+    star: {
+      type: String,
+      required: true,
+    },
     desc: {
       type: String,
     },

@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 const useInput = () => {
   const [inputValue, setInputValue] = useState<string>('');
 
-  const onChangeInput = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const onChangeInput = (e: { currentTarget: { value: React.SetStateAction<string>; }; }) => {
     setInputValue(e.currentTarget.value);
   };
 
