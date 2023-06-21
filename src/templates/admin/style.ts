@@ -8,7 +8,7 @@ export const Form = styled.form`
 
 export const Wapper = styled.div`
   display: flex;
-  justify-content: space-between;
+  gap: 200px;
 `;
 
 export const InputWrapper = styled.article`
@@ -18,6 +18,13 @@ export const InputWrapper = styled.article`
   height: 30px;
 `;
 
+export const Input = styled.input<{ isContent?: boolean }>`
+  width: 300px;
+  height: ${({ isContent }) => (isContent ? '150px' : '40px')};
+  padding-left: 10px;
+`;
+
 export const Button = styled.button`
+  height: 40px;
   background: aquamarine;
 `;

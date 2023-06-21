@@ -7,6 +7,8 @@ import useInput from '@/common/hook/useInput';
 import * as S from './style';
 import Preview from './preview';
 
+// TODO: contents에 엔터 눌렀을 때 줄바꿈 되게끔
+// TODO: 수정, 삭제 기능 추가
 const Admin = () => {
   const titleInput = useInput();
   const imageInput = useInput();
@@ -19,6 +21,7 @@ const Admin = () => {
 
     const data = {
       title: titleInput.inputValue,
+      star: starInput.inputValue,
       img: imageInput.inputValue,
       content: contentInput.inputValue
     };
@@ -27,16 +30,17 @@ const Admin = () => {
     console.log(res.data);
     setIsUpload(true);
   };
+
   return (
     <S.Form onSubmit={onSubmit}>
       <Inner>
         <S.Wapper>
           <Preview isUpload={isUpload} />
           <S.InputWrapper>
-            <input placeholder="title" value={titleInput.inputValue} onChange={titleInput.onChangeInput} />
-            <input placeholder="star" value={starInput.inputValue} onChange={starInput.onChangeInput} />
-            <input placeholder="image" value={imageInput.inputValue} onChange={imageInput.onChangeInput} />
-            <input placeholder="content" value={contentInput.inputValue} onChange={contentInput.onChangeInput} />
+            <S.Input placeholder="책 제목을 입력해주세요" value={titleInput.inputValue} onChange={titleInput.onChangeInput} />
+            <S.Input placeholder="별점을 입력해주세요. (최대 5개)" value={starInput.inputValue} onChange={starInput.onChangeInput} />
+            <S.Input placeholder="이미지 url을 입력해주세요" value={imageInput.inputValue} onChange={imageInput.onChangeInput} />
+            <S.Input isContent placeholder="완독 후기를 입력해주세요" value={contentInput.inputValue} onChange={contentInput.onChangeInput} />
             <S.Button type="submit">submit</S.Button>
           </S.InputWrapper>
         </S.Wapper>

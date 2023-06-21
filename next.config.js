@@ -4,7 +4,7 @@ const nextConfig = {};
 module.exports = {
   nextConfig,
   images: {
-    domains: ['i.pcmag.com', '*'],
+    domains: ['i.pcmag.com', '*', 'postfiles.pstatic.net'],
   },
   env: {
     API_BASE_URL: process.env.API_BASE_URL,

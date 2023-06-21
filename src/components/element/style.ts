@@ -23,6 +23,7 @@ export const ImageWrapper = styled.picture`
   height: 150px;
   img {
     border-radius: 10px 10px 0 0;
+    object-fit: cover;
   }
 `;
 
