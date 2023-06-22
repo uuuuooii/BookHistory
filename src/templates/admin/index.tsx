@@ -1,14 +1,14 @@
 'use client';
 
 import React, { useState } from 'react';
-import axios from 'axios';
 import Inner from '@/components/inner';
 import useInput from '@/common/hook/useInput';
 import * as S from './style';
 import Preview from './preview';
+import { postBookCreator } from '@/common/api/creatorBookPost';
 
 // TODO: contents에 엔터 눌렀을 때 줄바꿈 되게끔
-// TODO: 수정, 삭제 기능 추가
+// TODO: 수정, 삭제 기능 추가(hover 했을 때 수정할 수 있게)
 const Admin = () => {
   const titleInput = useInput();
   const imageInput = useInput();
@@ -26,7 +26,7 @@ const Admin = () => {
       content: contentInput.inputValue
     };
 
-    const res = await axios.post('http://localhost:3000/api/posts', data);
+    const res = await postBookCreator(data);
     console.log(res.data);
     setIsUpload(true);
   };

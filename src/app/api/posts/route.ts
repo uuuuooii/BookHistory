@@ -16,7 +16,6 @@ export const GET = async () => {
 
 export const POST = async (request: { json: () => any }) => {
   const body = await request.json();
-  console.log(body);
   const newPost = new Post(body);
   try {
     await connect();

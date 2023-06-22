@@ -2,30 +2,20 @@
 
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
-import { useRouter } from 'next/navigation';
-import axios from 'axios';
 import * as S from './style';
-
-interface PostDataProps {
-  id: string;
-  title: string;
-  star: string;
-  desc: string;
-  img: string;
-  content: string;
-}
+import { getBookPostData } from '@/common/api/creatorBookPost';
+import { PostDataProps } from '@/common/api/dto';
 
 interface ElementProps {
   isUpload?: boolean
 }
 
 const Element = ({ isUpload }: ElementProps) => {
-  const router = useRouter();
   const [postData, setPostData] = useState<PostDataProps[]>([]);
 
   useEffect(() => {
     const getPostData = async () => {
-      const res = await axios.get('http://localhost:3000/api/posts');
+      const res = await getBookPostData();
       setPostData(res.data);
     };
     getPostData();
@@ -34,7 +24,7 @@ const Element = ({ isUpload }: ElementProps) => {
   return (
     <S.Wrapper>
       {postData.map((item) => (
-        <S.PostsItem key={item.title} onClick={() => router.push('/detail')}>
+        <S.PostsItem key={item.title}>
           <S.ImageWrapper>
             <Image src={item.img} alt="thumbnail-image" fill />
           </S.ImageWrapper>
