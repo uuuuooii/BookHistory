@@ -1,12 +1,12 @@
 import { NextRequest, NextResponse } from 'next/server';
 import connect from '@/common/api/mongoose/db';
-import Post from '@/common/api/mongoose/schema/Post';
+import post from '@/common/api/mongoose/schema/post';
 
 export const GET = async () => {
   try {
     await connect();
 
-    const posts = await Post.find();
+    const posts = await post.find();
 
     return new NextResponse(JSON.stringify(posts), { status: 200 });
   } catch (err) {
@@ -16,7 +16,8 @@ export const GET = async () => {
 
 export const POST = async (request: NextRequest) => {
   const body = await request.json();
-  const newPost = new Post(body);
+  // eslint-disable-next-line new-cap
+  const newPost = new post(body);
   try {
     await connect();
 

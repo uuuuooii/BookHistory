@@ -30,7 +30,7 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "src/common/api/mongoose/db.ts",
-    "src/common/api/mongoose/schema/Post.ts"
+    "src/common/api/mongoose/schema/post.ts"
   ],
   "exclude": ["node_modules"]
 }
