@@ -9,10 +9,14 @@ module.exports = {
   env: {
     API_BASE_URL: process.env.API_BASE_URL,
   },
-  webpack5: true,
-  webpack: (config) => {
-    // eslint-disable-next-line no-param-reassign
-    config.resolve.fallback = { fs: false };
+
+  webpack: (config, { isServer }) => {
+    if (!isServer) {
+      // eslint-disable-next-line no-param-reassign
+      config.node = {
+        fs: 'empty',
+      };
+    }
 
     return config;
   },
