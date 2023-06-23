@@ -7,8 +7,6 @@ import * as S from './style';
 import Preview from './preview';
 import { postBookCreator } from '@/common/api/creatorBookPost';
 
-// TODO: contents에 엔터 눌렀을 때 줄바꿈 되게끔
-// TODO: 수정, 삭제 기능 추가(hover 했을 때 수정할 수 있게)
 const Admin = () => {
   const titleInput = useInput();
   const imageInput = useInput();
