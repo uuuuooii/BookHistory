@@ -3,12 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "dev": "next dev",
+    "lint": "eslint",
     "start": "DISABLE_ESLINT_PLUGIN=true react-scripts start",
     "build": "DISABLE_ESLINT_PLUGIN=true react-scripts build",
-    "test": "DISABLE_ESLINT_PLUGIN=true react-scripts test",
-    "dev": "next dev",
-
-    "lint": "eslint"
+    "test": "DISABLE_ESLINT_PLUGIN=true react-scripts test"
   },
   "dependencies": {
     "@emotion/react": "^11.11.1",
