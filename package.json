@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "CI= react-scripts build",
-    "start": "next start",
+    "start": "NODE_PATH=src react-scripts start",
     "lint": "eslint"
   },
   "dependencies": {
