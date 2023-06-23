@@ -1,11 +1,11 @@
 import React from 'react';
-import * as S from './style';
+import Visual from './style';
 import Posts from './Posts';
 
 const Main = () => {
   return (
     <div>
-      <S.Visual />
+      <Visual />
       <Posts />
     </div>
   );

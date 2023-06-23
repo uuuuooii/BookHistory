@@ -1,3 +1,5 @@
 'use client';
 
-export { Global } from '@emotion/react';
+import { Global } from '@emotion/react';
+
+export default Global;

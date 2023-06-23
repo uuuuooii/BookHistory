@@ -1,6 +1,6 @@
 import React from 'react';
-import * as S from './style';
 import Element from '@/components/element';
+import Wrapper from './style';
 
 interface PreviewProps {
   isUpload: boolean
@@ -8,9 +8,9 @@ interface PreviewProps {
 
 const Preview = ({ isUpload }: PreviewProps) => {
   return (
-    <S.Wrapper>
+    <Wrapper>
       <Element isUpload={isUpload} />
-    </S.Wrapper>
+    </Wrapper>
   );
 };
 

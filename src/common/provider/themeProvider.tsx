@@ -1,3 +1,5 @@
 'use client';
 
-export { ThemeProvider } from '@emotion/react';
+import { ThemeProvider } from '@emotion/react';
+
+export default ThemeProvider;

@@ -2,7 +2,7 @@
 
 import styled from '@emotion/styled';
 
-export const Visual = styled.div`
+const Visual = styled.div`
   position: relative;
   display: block;
   width: 100%;
@@ -20,3 +20,4 @@ export const Visual = styled.div`
   background-position: 50%;
   background-size: cover;
 `;
+export default Visual;

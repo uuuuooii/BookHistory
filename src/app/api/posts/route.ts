@@ -1,4 +1,4 @@
-import { NextResponse } from 'next/server';
+import { NextRequest, NextResponse } from 'next/server';
 import connect from '@/common/api/mongoose/db';
 import Post from '@/common/api/mongoose/schema/Post';
 
@@ -14,7 +14,7 @@ export const GET = async () => {
   }
 };
 
-export const POST = async (request: { json: () => any }) => {
+export const POST = async (request: NextRequest) => {
   const body = await request.json();
   const newPost = new Post(body);
   try {

@@ -4,8 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "CI=react-scripts build",
-    "start": "NODE_PATH=src react-scripts start",
+    "build": "next build",
+    "start": "next start",
     "lint": "eslint"
   },
   "dependencies": {
@@ -21,7 +21,6 @@
     "next": "13.4.4",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-scripts": "^5.0.1",
     "swr": "^2.1.5",
     "typescript": "5.1.3"
   },
