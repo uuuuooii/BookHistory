@@ -15,6 +15,7 @@ export const GET = async () => {
       },
     });
   } catch (err) {
+    console.error(err);
     return new NextResponse('Database Error', { status: 500 });
   }
 };
