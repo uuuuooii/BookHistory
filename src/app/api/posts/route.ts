@@ -8,7 +8,12 @@ export const GET = async () => {
 
     const posts = await post.find();
 
-    return new NextResponse(JSON.stringify(posts), { status: 200 });
+    return new NextResponse(JSON.stringify(posts), {
+      status: 200,
+      headers: {
+        'Access-Control-Allow-Origin': '*',
+      },
+    });
   } catch (err) {
     return new NextResponse('Database Error', { status: 500 });
   }
@@ -23,7 +28,12 @@ export const POST = async (request: NextRequest) => {
 
     await newPost.save();
 
-    return new NextResponse('post has been created', { status: 201 });
+    return new NextResponse('post has been created', {
+      status: 201,
+      headers: {
+        'Access-Control-Allow-Origin': '*',
+      },
+    });
   } catch (err) {
     console.error(err);
     return new NextResponse('Database Error', { status: 500 });
