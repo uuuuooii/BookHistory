@@ -4,7 +4,7 @@ const connect = async () => {
   const mongoURI = process.env.MONGO;
   console.log(mongoURI);
   try {
-    await mongoose.connect(String(mongoURI));
+    await mongoose.createConnection(String(mongoURI));
   } catch (error) {
     console.error(error);
     throw new Error('Connection failed!');
