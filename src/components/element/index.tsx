@@ -7,10 +7,11 @@ import { getBookPostData } from '@/common/api/creatorBookPost';
 import { PostDataProps } from '@/common/api/dto';
 
 interface ElementProps {
-  isUpload?: boolean
+  isUpload?: boolean,
+  isAdmin?: boolean
 }
 
-const Element = ({ isUpload }: ElementProps) => {
+const Element = ({ isUpload, isAdmin }: ElementProps) => {
   const [postData, setPostData] = useState<PostDataProps[]>([]);
 
   useEffect(() => {
@@ -29,14 +30,16 @@ const Element = ({ isUpload }: ElementProps) => {
         >
           <S.ImageWrapper>
             <Image src={item.img} alt="thumbnail-image" fill />
-            <S.IconWrapper>
-              <S.Icon>
-                <Image src="/images/svg/editeIcon.svg" alt="thumbnail-image" fill />
-              </S.Icon>
-              <S.Icon>
-                <Image src="/images/svg/deleteIcon.svg" alt="thumbnail-image" fill />
-              </S.Icon>
-            </S.IconWrapper>
+            {isAdmin && (
+              <S.IconWrapper>
+                <S.Icon>
+                  <Image src="/images/svg/editeIcon.svg" alt="thumbnail-image" fill />
+                </S.Icon>
+                <S.Icon>
+                  <Image src="/images/svg/deleteIcon.svg" alt="thumbnail-image" fill />
+                </S.Icon>
+              </S.IconWrapper>
+            )}
           </S.ImageWrapper>
           <S.Contents>
             <h3>
