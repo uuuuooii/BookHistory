@@ -16,7 +16,7 @@ export const PostsItem = styled.li`
   background: ${({ theme }) => theme.colors.neutral.white};
 `;
 
-export const ImageWrapper = styled.picture`
+export const ImageWrapper = styled.div`
   position: relative;
   display: block;
   width: 100%;
@@ -25,6 +25,45 @@ export const ImageWrapper = styled.picture`
     border-radius: 10px 10px 0 0;
     object-fit: cover;
   }
+  &:hover {
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0.6) 0%,
+        rgba(0, 0, 0, 0) 35.41%,
+        rgba(0, 0, 0, 0) 64.59%,
+        rgba(0, 0, 0, 0.6) 100%
+      );
+      z-index: 1;
+    }
+    div {
+      display: flex;
+      position: absolute;
+      gap: 10px;
+    }
+  }
+`;
+
+export const IconWrapper = styled.div`
+  display: none;
+`;
+
+export const Icon = styled.picture`
+  display: block;
+  gap: 10px;
+  position: relative;
+  width: 20px;
+  height: 20px;
+  top: 110px;
+  left: 233px;
+  z-index: 1;
+  cursor: pointer;
 `;
 
 export const Contents = styled.div`

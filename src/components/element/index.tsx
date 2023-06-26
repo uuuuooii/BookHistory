@@ -24,9 +24,19 @@ const Element = ({ isUpload }: ElementProps) => {
   return (
     <S.Wrapper>
       {postData.map((item) => (
-        <S.PostsItem key={item.title}>
+        <S.PostsItem
+          key={item.title}
+        >
           <S.ImageWrapper>
             <Image src={item.img} alt="thumbnail-image" fill />
+            <S.IconWrapper>
+              <S.Icon>
+                <Image src="/images/svg/editeIcon.svg" alt="thumbnail-image" fill />
+              </S.Icon>
+              <S.Icon>
+                <Image src="/images/svg/deleteIcon.svg" alt="thumbnail-image" fill />
+              </S.Icon>
+            </S.IconWrapper>
           </S.ImageWrapper>
           <S.Contents>
             <h3>

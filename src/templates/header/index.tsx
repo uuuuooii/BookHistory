@@ -31,7 +31,6 @@ const Header = () => {
             <S.Title>BooK History</S.Title>
           </Link>
         </h1>
-        <S.NavItme>기록하기</S.NavItme>
       </S.Navigation>
     </S.Wrapper>
 

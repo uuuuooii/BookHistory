@@ -28,7 +28,3 @@ export const Navigation = styled.nav`
 export const Title = styled.p`
   color: ${({ theme }) => theme.colors.neutral.white};
 `;
-
-export const NavItme = styled.button`
-  color: ${({ theme }) => theme.colors.neutral.white};
-`;
