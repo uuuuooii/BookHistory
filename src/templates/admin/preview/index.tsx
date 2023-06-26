@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Element from '@/components/element';
 import Wrapper from './style';
 
@@ -7,7 +7,6 @@ interface PreviewProps {
 }
 
 const Preview = ({ isUpload }: PreviewProps) => {
-  const [edit, setEdit] = useState();
   return (
     <Wrapper>
       <Element isUpload={isUpload} isAdmin />
