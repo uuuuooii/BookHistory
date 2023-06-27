@@ -9,11 +9,14 @@ import { PostDataProps } from '@/common/api/dto';
 interface ElementProps {
   isUpload?: boolean;
   isAdmin?: boolean;
-  onClickEditItem: (item: PostDataProps) => void
+  editItem?: {
+    editItem: PostDataProps | undefined;
+    onClickEditItem: (item: PostDataProps) => void;
+  }
 }
 
 const ListElement = ({
-  isUpload, isAdmin, onClickEditItem
+  isUpload, isAdmin, editItem
 }: ElementProps) => {
   const [postData, setPostData] = useState<PostDataProps[]>([]);
 
@@ -33,9 +36,9 @@ const ListElement = ({
         >
           <S.ImageWrapper>
             <Image src={item.img} alt="thumbnail-image" fill />
-            {isAdmin && (
+            {isAdmin && editItem && (
               <S.IconWrapper>
-                <S.Icon onClick={() => onClickEditItem(item)}>
+                <S.Icon onClick={() => editItem.onClickEditItem(item)}>
                   <Image src="/images/svg/editeIcon.svg" alt="thumbnail-image" fill />
                 </S.Icon>
                 <S.Icon>

@@ -8,19 +8,16 @@ import Preview from './preview';
 import { postBookCreator } from '@/common/api/creatorBookPost';
 import AdminInput from './input';
 import { PostDataProps } from '@/common/api/dto';
+import useEditItem from '@/common/hook/useEditItem';
 
 const Admin = () => {
   const titleInput = useInput();
   const imageInput = useInput();
   const contentInput = useInput();
   const starInput = useInput();
+  const editItem = useEditItem();
 
   const [isUpload, setIsUpload] = useState(false);
-  const [editItem, setEditItem] = useState<PostDataProps>();
-
-  const onClickEditItem = (item: PostDataProps) => {
-    setEditItem(item);
-  };
 
   const onSubmit: React.FormEventHandler<HTMLFormElement> = async (e) => {
     e.preventDefault();
@@ -41,13 +38,13 @@ const Admin = () => {
     <S.Form onSubmit={onSubmit}>
       <Inner>
         <S.Wapper>
-          <Preview isUpload={isUpload} onClickEditItem={onClickEditItem} />
+          <Preview isUpload={isUpload} editItem={editItem} />
           <AdminInput
             titleInput={titleInput}
             imageInput={imageInput}
             contentInput={contentInput}
             starInput={starInput}
-            editItem={editItem}
+            editItem={editItem.editItem}
           />
         </S.Wapper>
       </Inner>
