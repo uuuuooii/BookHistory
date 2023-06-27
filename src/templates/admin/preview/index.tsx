@@ -1,5 +1,5 @@
 import React from 'react';
-import Element from '@/components/element';
+import ListElement from '@/components/listElement';
 import Wrapper from './style';
 import { PostDataProps } from '@/common/api/dto';
 
@@ -11,7 +11,7 @@ interface PreviewProps {
 const Preview = ({ isUpload, onClickEditItem }: PreviewProps) => {
   return (
     <Wrapper>
-      <Element isUpload={isUpload} onClickEditItem={onClickEditItem} isAdmin />
+      <ListElement isUpload={isUpload} onClickEditItem={onClickEditItem} isAdmin />
     </Wrapper>
   );
 };

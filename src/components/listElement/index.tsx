@@ -5,7 +5,6 @@ import Image from 'next/image';
 import * as S from './style';
 import { getBookPostData } from '@/common/api/creatorBookPost';
 import { PostDataProps } from '@/common/api/dto';
-import EditItem from '@/templates/admin/edit';
 
 interface ElementProps {
   isUpload?: boolean;
@@ -13,7 +12,7 @@ interface ElementProps {
   onClickEditItem: (item: PostDataProps) => void
 }
 
-const Element = ({
+const ListElement = ({
   isUpload, isAdmin, onClickEditItem
 }: ElementProps) => {
   const [postData, setPostData] = useState<PostDataProps[]>([]);
@@ -35,7 +34,14 @@ const Element = ({
           <S.ImageWrapper>
             <Image src={item.img} alt="thumbnail-image" fill />
             {isAdmin && (
-              <EditItem item={item} onClickEditItem={onClickEditItem} />
+              <S.IconWrapper>
+                <S.Icon onClick={() => onClickEditItem(item)}>
+                  <Image src="/images/svg/editeIcon.svg" alt="thumbnail-image" fill />
+                </S.Icon>
+                <S.Icon>
+                  <Image src="/images/svg/deleteIcon.svg" alt="thumbnail-image" fill />
+                </S.Icon>
+              </S.IconWrapper>
             )}
           </S.ImageWrapper>
           <S.Contents>
@@ -56,4 +62,4 @@ const Element = ({
   );
 };
 
-export default Element;
+export default ListElement;
