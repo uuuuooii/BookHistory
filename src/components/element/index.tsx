@@ -5,13 +5,17 @@ import Image from 'next/image';
 import * as S from './style';
 import { getBookPostData } from '@/common/api/creatorBookPost';
 import { PostDataProps } from '@/common/api/dto';
+import EditItem from '@/templates/admin/edit';
 
 interface ElementProps {
-  isUpload?: boolean,
-  isAdmin?: boolean
+  isUpload?: boolean;
+  isAdmin?: boolean;
+  onClickEditItem: (item: PostDataProps) => void
 }
 
-const Element = ({ isUpload, isAdmin }: ElementProps) => {
+const Element = ({
+  isUpload, isAdmin, onClickEditItem
+}: ElementProps) => {
   const [postData, setPostData] = useState<PostDataProps[]>([]);
 
   useEffect(() => {
@@ -31,14 +35,7 @@ const Element = ({ isUpload, isAdmin }: ElementProps) => {
           <S.ImageWrapper>
             <Image src={item.img} alt="thumbnail-image" fill />
             {isAdmin && (
-              <S.IconWrapper>
-                <S.Icon>
-                  <Image src="/images/svg/editeIcon.svg" alt="thumbnail-image" fill />
-                </S.Icon>
-                <S.Icon>
-                  <Image src="/images/svg/deleteIcon.svg" alt="thumbnail-image" fill />
-                </S.Icon>
-              </S.IconWrapper>
+              <EditItem item={item} onClickEditItem={onClickEditItem} />
             )}
           </S.ImageWrapper>
           <S.Contents>
@@ -48,10 +45,6 @@ const Element = ({ isUpload, isAdmin }: ElementProps) => {
             <div>
               <div>{item.star}</div>
             </div>
-            <S.Date>
-              {/* <S.Time>{item.readingTime}</S.Time>
-              <S.Day>{item.data}</S.Day> */}
-            </S.Date>
             <div>
               <S.Desc>{item.content}</S.Desc>
             </div>

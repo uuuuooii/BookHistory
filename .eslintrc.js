@@ -24,5 +24,6 @@ module.exports = {
     'comma-dangle': 'off',
     'operator-linebreak': 'off',
     'react/require-default-props': 'off',
+    'no-unused-vars': 'off',
   },
 };

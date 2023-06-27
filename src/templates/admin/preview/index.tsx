@@ -1,15 +1,17 @@
 import React from 'react';
 import Element from '@/components/element';
 import Wrapper from './style';
+import { PostDataProps } from '@/common/api/dto';
 
 interface PreviewProps {
-  isUpload: boolean
+  isUpload: boolean,
+  onClickEditItem: (item: PostDataProps) => void
 }
 
-const Preview = ({ isUpload }: PreviewProps) => {
+const Preview = ({ isUpload, onClickEditItem }: PreviewProps) => {
   return (
     <Wrapper>
-      <Element isUpload={isUpload} isAdmin />
+      <Element isUpload={isUpload} onClickEditItem={onClickEditItem} isAdmin />
     </Wrapper>
   );
 };

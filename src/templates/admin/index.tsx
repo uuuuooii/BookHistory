@@ -6,13 +6,21 @@ import useInput from '@/common/hook/useInput';
 import * as S from './style';
 import Preview from './preview';
 import { postBookCreator } from '@/common/api/creatorBookPost';
+import AdminInput from './input';
+import { PostDataProps } from '@/common/api/dto';
 
 const Admin = () => {
   const titleInput = useInput();
   const imageInput = useInput();
   const contentInput = useInput();
   const starInput = useInput();
+
   const [isUpload, setIsUpload] = useState(false);
+  const [editItem, setEditItem] = useState<PostDataProps>();
+
+  const onClickEditItem = (item: PostDataProps) => {
+    setEditItem(item);
+  };
 
   const onSubmit: React.FormEventHandler<HTMLFormElement> = async (e) => {
     e.preventDefault();
@@ -33,14 +41,14 @@ const Admin = () => {
     <S.Form onSubmit={onSubmit}>
       <Inner>
         <S.Wapper>
-          <Preview isUpload={isUpload} />
-          <S.InputWrapper>
-            <S.Input placeholder="책 제목을 입력해주세요" value={titleInput.inputValue} onChange={titleInput.onChangeInput} />
-            <S.Input placeholder="별점을 입력해주세요. (최대 5개)" value={starInput.inputValue} onChange={starInput.onChangeInput} />
-            <S.Input placeholder="이미지 url을 입력해주세요" value={imageInput.inputValue} onChange={imageInput.onChangeInput} />
-            <S.Input isContent placeholder="완독 후기를 입력해주세요" value={contentInput.inputValue} onChange={contentInput.onChangeInput} />
-            <S.Button type="submit">submit</S.Button>
-          </S.InputWrapper>
+          <Preview isUpload={isUpload} onClickEditItem={onClickEditItem} />
+          <AdminInput
+            titleInput={titleInput}
+            imageInput={imageInput}
+            contentInput={contentInput}
+            starInput={starInput}
+            editItem={editItem}
+          />
         </S.Wapper>
       </Inner>
     </S.Form>

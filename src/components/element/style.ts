@@ -50,22 +50,6 @@ export const ImageWrapper = styled.div`
   }
 `;
 
-export const IconWrapper = styled.div`
-  display: none;
-`;
-
-export const Icon = styled.picture`
-  display: block;
-  gap: 10px;
-  position: relative;
-  width: 20px;
-  height: 20px;
-  top: 110px;
-  left: 233px;
-  z-index: 1;
-  cursor: pointer;
-`;
-
 export const Contents = styled.div`
   display: grid;
   gap: 5px;
@@ -75,20 +59,6 @@ export const Contents = styled.div`
 export const ItemTitle = styled.a`
   font-size: 18px;
   font-weight: 500;
-`;
-
-export const Date = styled.div`
-  display: flex;
-  gap: 10px;
-  font-size: 13px;
-`;
-
-export const Time = styled.p`
-  color: ${({ theme }) => theme.colors.gray.gray02};
-`;
-
-export const Day = styled.p`
-  color: ${({ theme }) => theme.colors.gray.gray02};
 `;
 
 export const Desc = styled.p`
