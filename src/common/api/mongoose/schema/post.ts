@@ -4,9 +4,6 @@ const { Schema } = mongoose;
 
 const postSchema = new Schema(
   {
-    id: {
-      type: String,
-    },
     title: {
       type: String,
       required: true,

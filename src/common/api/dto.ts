@@ -1,5 +1,5 @@
 export interface PostDataProps {
-  id: string;
+  _id: string;
   title: string;
   star: string;
   desc: string;

@@ -26,5 +26,6 @@ module.exports = {
     'react/require-default-props': 'off',
     'no-unused-vars': 'off',
     'no-param-reassign': 'off',
+    'no-underscore-dangle': ['error', { allow: ['_id'] }],
   },
 };

@@ -16,7 +16,7 @@ const Admin = () => {
   const contentInput = useInput();
   const starInput = useInput();
   const editItem = useEditItem();
-
+  console.log(editItem.editItem);
   const [isUpload, setIsUpload] = useState(false);
 
   const onSubmit: React.FormEventHandler<HTMLFormElement> = async (e) => {
@@ -40,7 +40,7 @@ const Admin = () => {
     e.preventDefault();
 
     const editData = {
-      id: editItem.editItem?.id,
+      id: editItem.editItem?._id,
       title: editItem.editItem?.title,
       star: editItem.editItem?.star,
       img: editItem.editItem?.img,
@@ -48,10 +48,15 @@ const Admin = () => {
     };
 
     const res = await putBookUpdate(editData);
+    if (res.data) {
+      alert('수정되었습니다');
+    } else {
+      alert('수정에 실패했습니다');
+    }
     console.log(res.data);
   };
 
-  const handleSubmit = editItem ? onSubmitEdit : onSubmit;
+  const handleSubmit = editItem.editItem ? onSubmitEdit : onSubmit;
 
   return (
     <S.Form onSubmit={handleSubmit}>

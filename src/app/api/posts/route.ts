@@ -43,20 +43,26 @@ export const POST = async (request: NextRequest) => {
 
 export const PUT = async (request: NextRequest) => {
   const body = await request.json();
-  console.log(body);
+
   try {
     await connect();
 
-    const editPost = await post.findById(body.id);
+    const editPost = await post.findOneAndReplace(
+      { _id: body.id },
+      {
+        _id: body.newId,
+        title: body.title,
+        star: body.star,
+        img: body.img,
+        content: body.content,
+      }
+    );
 
-    editPost.title = body.title;
-    editPost.star = body.star;
-    editPost.img = body.img;
-    editPost.content = body.content;
+    if (!editPost) {
+      return new NextResponse('Post not found', { status: 404 });
+    }
 
-    await editPost.save();
-
-    return new NextResponse('put has been created', {
+    return new NextResponse('Put has been created', {
       status: 201,
       headers: {
         'Access-Control-Allow-Origin': '*',
