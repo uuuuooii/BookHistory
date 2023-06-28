@@ -25,5 +25,6 @@ module.exports = {
     'operator-linebreak': 'off',
     'react/require-default-props': 'off',
     'no-unused-vars': 'off',
+    'no-param-reassign': 'off',
   },
 };

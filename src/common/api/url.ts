@@ -1,2 +1,2 @@
-const BOOK_POST_DATA_URL = '/api/posts';
-export default BOOK_POST_DATA_URL;
+export const BOOK_POST_DATA_URL = '/api/posts';
+export const updatePost = (id: string) => `/api/posts${id}`;

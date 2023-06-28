@@ -5,7 +5,7 @@ import Inner from '@/components/inner';
 import useInput from '@/common/hook/useInput';
 import * as S from './style';
 import Preview from './preview';
-import { postBookCreator } from '@/common/api/creatorBookPost';
+import { postBookCreator, putBookUpdate } from '@/common/api/creatorBookPost';
 import AdminInput from './input';
 import { PostDataProps } from '@/common/api/dto';
 import useEditItem from '@/common/hook/useEditItem';
@@ -30,12 +30,30 @@ const Admin = () => {
     };
 
     const res = await postBookCreator(data);
-    console.log(res.data);
-    setIsUpload(true);
+    if (res.data) {
+      alert('등록 되었습니다');
+      setIsUpload(true);
+    }
   };
 
+  const onSubmitEdit: React.FormEventHandler<HTMLFormElement> = async (e) => {
+    e.preventDefault();
+
+    const editData = {
+      title: editItem.editItem?.title,
+      star: editItem.editItem?.star,
+      img: editItem.editItem?.img,
+      content: editItem.editItem?.content,
+    };
+
+    // const res = await putBookUpdate(editItem.editItem?.id, editData);
+    // console.log(res.data);
+  };
+
+  const handleSubmit = editItem ? onSubmitEdit : onSubmit;
+
   return (
-    <S.Form onSubmit={onSubmit}>
+    <S.Form onSubmit={handleSubmit}>
       <Inner>
         <S.Wapper>
           <Preview isUpload={isUpload} editItem={editItem} />
