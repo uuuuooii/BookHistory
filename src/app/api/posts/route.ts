@@ -43,14 +43,20 @@ export const POST = async (request: NextRequest) => {
 
 export const PUT = async (request: NextRequest) => {
   const body = await request.json();
-  // eslint-disable-next-line new-cap
-  const newPost = new post(body);
+  console.log(body);
   try {
     await connect();
 
-    await newPost.save();
+    const editPost = await post.findById(body.id);
 
-    return new NextResponse('post has been created', {
+    editPost.title = body.title;
+    editPost.star = body.star;
+    editPost.img = body.img;
+    editPost.content = body.content;
+
+    await editPost.save();
+
+    return new NextResponse('put has been created', {
       status: 201,
       headers: {
         'Access-Control-Allow-Origin': '*',

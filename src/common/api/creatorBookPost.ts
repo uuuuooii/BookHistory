@@ -11,9 +11,7 @@ export const postBookCreator = async (data: any): Promise<AxiosResponse> => {
   return axios.post(BOOK_POST_DATA_URL, data);
 };
 
-export const putBookUpdate = async (
-  id: string,
-  data: any
-): Promise<AxiosResponse> => {
-  return axios.put(updatePost(id), data);
+// TODO: any 수정
+export const putBookUpdate = async (data: any): Promise<AxiosResponse> => {
+  return axios.put(BOOK_POST_DATA_URL, data);
 };

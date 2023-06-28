@@ -40,14 +40,15 @@ const Admin = () => {
     e.preventDefault();
 
     const editData = {
+      id: editItem.editItem?.id,
       title: editItem.editItem?.title,
       star: editItem.editItem?.star,
       img: editItem.editItem?.img,
       content: editItem.editItem?.content,
     };
 
-    // const res = await putBookUpdate(editItem.editItem?.id, editData);
-    // console.log(res.data);
+    const res = await putBookUpdate(editData);
+    console.log(res.data);
   };
 
   const handleSubmit = editItem ? onSubmitEdit : onSubmit;
