@@ -3,20 +3,24 @@
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import * as S from './style';
-import { getBookPostData } from '@/common/api/creatorBookPost';
+import { deletePostData, getBookPostData } from '@/common/api/creatorBookPost';
 import { PostDataProps } from '@/common/api/dto';
 
 interface ElementProps {
   isUpload?: boolean;
   isAdmin?: boolean;
   editItem?: {
-    editItem: PostDataProps | undefined;
-    onClickEditItem: (item: PostDataProps) => void;
+    selecteItem: PostDataProps | undefined;
+    onClickSelecteItem: (item: PostDataProps) => void;
+  }
+  deleteItem: {
+    selecteItem: PostDataProps | undefined;
+    onClickSelecteItem: (item: PostDataProps) => void;
   }
 }
 
 const ListElement = ({
-  isUpload, isAdmin, editItem
+  isUpload, isAdmin, editItem, deleteItem
 }: ElementProps) => {
   const [postData, setPostData] = useState<PostDataProps[]>([]);
 
@@ -28,6 +32,16 @@ const ListElement = ({
     getPostData();
   }, [isUpload]);
 
+  const deletedItem = async (item: PostDataProps) => {
+    console.log(item._id);
+    try {
+      const res = await deletePostData(item._id);
+      console.log(res);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   return (
     <S.Wrapper>
       {postData.map((item) => (
@@ -38,10 +52,10 @@ const ListElement = ({
             <Image src={item.img} alt="thumbnail-image" fill />
             {isAdmin && editItem && (
               <S.IconWrapper>
-                <S.Icon onClick={() => editItem.onClickEditItem(item)}>
+                <S.Icon onClick={() => editItem.onClickSelecteItem(item)}>
                   <Image src="/images/svg/editeIcon.svg" alt="thumbnail-image" fill />
                 </S.Icon>
-                <S.Icon>
+                <S.Icon onClick={() => deletedItem(item)}>
                   <Image src="/images/svg/deleteIcon.svg" alt="thumbnail-image" fill />
                 </S.Icon>
               </S.IconWrapper>

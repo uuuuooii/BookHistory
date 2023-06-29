@@ -6,15 +6,19 @@ import { PostDataProps } from '@/common/api/dto';
 interface PreviewProps {
   isUpload: boolean,
   editItem: {
-    editItem: PostDataProps | undefined;
-    onClickEditItem: (item: PostDataProps) => void;
+    selecteItem: PostDataProps | undefined;
+    onClickSelecteItem: (item: PostDataProps) => void;
+  }
+  deleteItem: {
+    selecteItem: PostDataProps | undefined;
+    onClickSelecteItem: (item: PostDataProps) => void;
   }
 }
 
-const Preview = ({ isUpload, editItem }: PreviewProps) => {
+const Preview = ({ isUpload, editItem, deleteItem }: PreviewProps) => {
   return (
     <Wrapper>
-      <ListElement isUpload={isUpload} editItem={editItem} isAdmin />
+      <ListElement isUpload={isUpload} editItem={editItem} deleteItem={deleteItem} isAdmin />
     </Wrapper>
   );
 };

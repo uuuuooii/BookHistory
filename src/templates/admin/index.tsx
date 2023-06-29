@@ -7,16 +7,16 @@ import * as S from './style';
 import Preview from './preview';
 import { postBookCreator, putBookUpdate } from '@/common/api/creatorBookPost';
 import AdminInput from './input';
-import { PostDataProps } from '@/common/api/dto';
-import useEditItem from '@/common/hook/useEditItem';
+import useSelecteItem from '@/common/hook/useSelecteItem';
 
 const Admin = () => {
   const titleInput = useInput();
   const imageInput = useInput();
   const contentInput = useInput();
   const starInput = useInput();
-  const editItem = useEditItem();
-  console.log(editItem.editItem);
+  const editItem = useSelecteItem();
+  const deleteItem = useSelecteItem();
+
   const [isUpload, setIsUpload] = useState(false);
 
   const onSubmit: React.FormEventHandler<HTMLFormElement> = async (e) => {
@@ -40,11 +40,11 @@ const Admin = () => {
     e.preventDefault();
 
     const editData = {
-      id: editItem.editItem?._id,
-      title: editItem.editItem?.title,
-      star: editItem.editItem?.star,
-      img: editItem.editItem?.img,
-      content: editItem.editItem?.content,
+      id: editItem.selecteItem?._id,
+      title: editItem.selecteItem?.title,
+      star: editItem.selecteItem?.star,
+      img: editItem.selecteItem?.img,
+      content: editItem.selecteItem?.content,
     };
 
     const res = await putBookUpdate(editData);
@@ -56,19 +56,19 @@ const Admin = () => {
     console.log(res.data);
   };
 
-  const handleSubmit = editItem.editItem ? onSubmitEdit : onSubmit;
+  const handleSubmit = editItem.selecteItem ? onSubmitEdit : onSubmit;
 
   return (
     <S.Form onSubmit={handleSubmit}>
       <Inner>
         <S.Wapper>
-          <Preview isUpload={isUpload} editItem={editItem} />
+          <Preview isUpload={isUpload} editItem={editItem} deleteItem={deleteItem} />
           <AdminInput
             titleInput={titleInput}
             imageInput={imageInput}
             contentInput={contentInput}
             starInput={starInput}
-            editItem={editItem.editItem}
+            editItem={editItem.selecteItem}
           />
         </S.Wapper>
       </Inner>
