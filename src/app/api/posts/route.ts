@@ -77,9 +77,8 @@ export const PUT = async (request: NextRequest) => {
 export const DELETE = async (request: NextRequest) => {
   try {
     const body = await request.json();
-    console.log(body);
 
-    if (!body.id) {
+    if (!body || !body.id) {
       return new NextResponse('Invalid request', { status: 400 });
     }
 

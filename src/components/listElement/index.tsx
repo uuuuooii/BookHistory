@@ -2,9 +2,11 @@
 
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
+import axios from 'axios';
 import * as S from './style';
 import { deletePostData, getBookPostData } from '@/common/api/creatorBookPost';
 import { PostDataProps } from '@/common/api/dto';
+import BOOK_POST_DATA_URL from '@/common/api/url';
 
 interface ElementProps {
   isUpload?: boolean;
@@ -33,10 +35,14 @@ const ListElement = ({
   }, [isUpload]);
 
   const deletedItem = async (item: PostDataProps) => {
-    console.log(item._id);
     try {
-      const res = await deletePostData(item._id);
-      console.log(res);
+      // 삭제할 postId를 전달합니다.
+      const postId = item._id;
+      console.log(postId);
+      // 서버의 DELETE 엔드포인트로 요청을 보냅니다.
+      await axios.delete(BOOK_POST_DATA_URL, { data: JSON.stringify(postId) });
+
+      console.log('Post has been deleted');
     } catch (error) {
       console.error(error);
     }
