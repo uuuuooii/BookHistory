@@ -15,7 +15,7 @@ interface ElementProps {
     selecteItem: PostDataProps | undefined;
     onClickSelecteItem: (item: PostDataProps) => void;
   }
-  deleteItem: {
+  deleteItem?: {
     selecteItem: PostDataProps | undefined;
     onClickSelecteItem: (item: PostDataProps) => void;
   }
@@ -40,7 +40,7 @@ const ListElement = ({
       const postId = item._id;
       console.log(postId);
       // 서버의 DELETE 엔드포인트로 요청을 보냅니다.
-      await axios.delete(BOOK_POST_DATA_URL, { data: JSON.stringify(postId) });
+      await axios.delete(BOOK_POST_DATA_URL, { data: postId });
 
       console.log('Post has been deleted');
     } catch (error) {

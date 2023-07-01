@@ -74,7 +74,6 @@ export const PUT = async (request: NextRequest) => {
   }
 };
 
-// SyntaxError: Unexpected end of JSON input남
 export const DELETE = async (request: NextRequest) => {
   try {
     const body = await request.json();
