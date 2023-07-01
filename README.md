@@ -1,4 +1,4 @@
-# [bookHistory](https://book-history-jxugrov7s-uuuuooii.vercel.app)
+# [bookHistory](https://book-history-bj06uu7qw-uuuuooii.vercel.app)
 
 안녕하세요. 김은혜입니다.
 이 저장소는 제가 완독한 책을 기록하는 공간입니다.</br>
