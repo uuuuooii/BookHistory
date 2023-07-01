@@ -28,7 +28,7 @@ const ListElement = ({
   useEffect(() => {
     const getPostData = async () => {
       const res = await getBookPostData();
-      setPostData(res.data);
+      setPostData(res.data.reverse());
     };
     getPostData();
   }, [isUpload, isDelete]);
