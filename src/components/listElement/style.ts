@@ -5,7 +5,7 @@ import styled from '@emotion/styled';
 export const Wrapper = styled.ul`
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 15px;
   border-radius: 10px;
 `;
 
