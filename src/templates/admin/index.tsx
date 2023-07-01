@@ -27,7 +27,6 @@ const Admin = () => {
       img: imageInput.inputValue,
       content: contentInput.inputValue
     };
-
     const res = await postBookCreator(data);
     if (res.data) {
       alert('등록 되었습니다');
