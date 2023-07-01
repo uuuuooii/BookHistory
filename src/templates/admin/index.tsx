@@ -15,7 +15,6 @@ const Admin = () => {
   const contentInput = useInput();
   const starInput = useInput();
   const editItem = useSelecteItem();
-  const deleteItem = useSelecteItem();
 
   const [isUpload, setIsUpload] = useState(false);
 
@@ -50,10 +49,7 @@ const Admin = () => {
     const res = await putBookUpdate(editData);
     if (res.data) {
       alert('수정되었습니다');
-    } else {
-      alert('수정에 실패했습니다');
     }
-    console.log(res.data);
   };
 
   const handleSubmit = editItem.selecteItem ? onSubmitEdit : onSubmit;
@@ -62,7 +58,7 @@ const Admin = () => {
     <S.Form onSubmit={handleSubmit}>
       <Inner>
         <S.Wapper>
-          <Preview isUpload={isUpload} editItem={editItem} deleteItem={deleteItem} />
+          <Preview isUpload={isUpload} editItem={editItem} />
           <AdminInput
             titleInput={titleInput}
             imageInput={imageInput}

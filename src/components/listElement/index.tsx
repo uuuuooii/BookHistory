@@ -23,6 +23,7 @@ const ListElement = ({
   isUpload, isAdmin, editItem, deleteItem
 }: ElementProps) => {
   const [postData, setPostData] = useState<PostDataProps[]>([]);
+  const [isDelete, setIsDelete] = useState<boolean>(false);
 
   useEffect(() => {
     const getPostData = async () => {
@@ -30,10 +31,12 @@ const ListElement = ({
       setPostData(res.data);
     };
     getPostData();
-  }, [isUpload]);
+  }, [isUpload, isDelete]);
 
   const handleDelete = async (id: string) => {
     await deletePostData(id);
+    setIsDelete(true);
+    alert('삭제 되었습니다');
   };
 
   return (

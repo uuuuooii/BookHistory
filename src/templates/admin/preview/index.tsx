@@ -9,16 +9,12 @@ interface PreviewProps {
     selecteItem: PostDataProps | undefined;
     onClickSelecteItem: (item: PostDataProps) => void;
   }
-  deleteItem: {
-    selecteItem: PostDataProps | undefined;
-    onClickSelecteItem: (item: PostDataProps) => void;
-  }
 }
 
-const Preview = ({ isUpload, editItem, deleteItem }: PreviewProps) => {
+const Preview = ({ isUpload, editItem }: PreviewProps) => {
   return (
     <Wrapper>
-      <ListElement isUpload={isUpload} editItem={editItem} deleteItem={deleteItem} isAdmin />
+      <ListElement isUpload={isUpload} editItem={editItem} isAdmin />
     </Wrapper>
   );
 };

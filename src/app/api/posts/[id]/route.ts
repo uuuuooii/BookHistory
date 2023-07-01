@@ -1,9 +1,9 @@
-import { NextResponse } from 'next/server';
+import { NextRequest, NextResponse } from 'next/server';
 import connect from '@/common/api/mongoose/db';
 import post from '@/common/api/mongoose/schema/post';
 
 // eslint-disable-next-line import/prefer-default-export
-export const DELETE = async ({ params }: any) => {
+export const DELETE = async (request: NextRequest, { params }: any) => {
   const { id } = params;
 
   try {
