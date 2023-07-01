@@ -1,22 +1,23 @@
 import axios, { AxiosResponse } from 'axios';
-import BOOK_POST_DATA_URL from './url';
+import { deletePostItem, BOOK_POST_DATA_URL } from './url';
+import { PostDataProps } from './dto';
 
 export const getBookPostData = async (): Promise<AxiosResponse> => {
   return axios.get(BOOK_POST_DATA_URL);
 };
 
-// TODO: any 수정
-export const postBookCreator = async (data: any): Promise<AxiosResponse> => {
+export const postBookCreator = async (
+  data: PostDataProps
+): Promise<AxiosResponse> => {
   return axios.post(BOOK_POST_DATA_URL, data);
 };
 
-// TODO: any 수정
-export const putBookUpdate = async (data: any): Promise<AxiosResponse> => {
+export const putBookUpdate = async (
+  data: PostDataProps
+): Promise<AxiosResponse> => {
   return axios.put(BOOK_POST_DATA_URL, data);
 };
 
-export const deletePostData = async (
-  postId: string
-): Promise<AxiosResponse> => {
-  return axios.delete(`/api/posts/${postId}`);
+export const deletePostData = async (id: string): Promise<AxiosResponse> => {
+  return axios.delete(deletePostItem(id));
 };

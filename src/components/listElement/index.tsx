@@ -2,11 +2,9 @@
 
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
-import axios from 'axios';
 import * as S from './style';
 import { deletePostData, getBookPostData } from '@/common/api/creatorBookPost';
 import { PostDataProps } from '@/common/api/dto';
-import BOOK_POST_DATA_URL from '@/common/api/url';
 
 interface ElementProps {
   isUpload?: boolean;
@@ -34,18 +32,8 @@ const ListElement = ({
     getPostData();
   }, [isUpload]);
 
-  const deletedItem = async (item: PostDataProps) => {
-    try {
-      // 삭제할 postId를 전달합니다.
-      const postId = item._id;
-      console.log(postId);
-      // 서버의 DELETE 엔드포인트로 요청을 보냅니다.
-      await axios.delete(BOOK_POST_DATA_URL, { data: postId });
-
-      console.log('Post has been deleted');
-    } catch (error) {
-      console.error(error);
-    }
+  const handleDelete = async (id: string) => {
+    await deletePostData(id);
   };
 
   return (
@@ -55,13 +43,13 @@ const ListElement = ({
           key={item.title}
         >
           <S.ImageWrapper>
-            <Image src={item.img} alt="thumbnail-image" fill />
+            <Image src={String(item.img)} alt="thumbnail-image" fill />
             {isAdmin && editItem && (
               <S.IconWrapper>
                 <S.Icon onClick={() => editItem.onClickSelecteItem(item)}>
                   <Image src="/images/svg/editeIcon.svg" alt="thumbnail-image" fill />
                 </S.Icon>
-                <S.Icon onClick={() => deletedItem(item)}>
+                <S.Icon onClick={() => handleDelete(String(item._id))}>
                   <Image src="/images/svg/deleteIcon.svg" alt="thumbnail-image" fill />
                 </S.Icon>
               </S.IconWrapper>

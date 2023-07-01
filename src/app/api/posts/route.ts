@@ -73,31 +73,3 @@ export const PUT = async (request: NextRequest) => {
     return new NextResponse('Database Error', { status: 500 });
   }
 };
-
-export const DELETE = async (request: NextRequest) => {
-  try {
-    const body = await request.json();
-
-    if (!body || !body.id) {
-      return new NextResponse('Invalid request', { status: 400 });
-    }
-
-    await connect();
-
-    const deletedPost = await post.findByIdAndDelete({ _id: body.id });
-
-    if (!deletedPost) {
-      return new NextResponse('Post not found', { status: 404 });
-    }
-
-    return new NextResponse('Post has been deleted', {
-      status: 200,
-      headers: {
-        'Access-Control-Allow-Origin': '*',
-      },
-    });
-  } catch (err) {
-    console.error(err);
-    return new NextResponse('Database Error', { status: 500 });
-  }
-};
