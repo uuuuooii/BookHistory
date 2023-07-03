@@ -9,7 +9,7 @@ export const Wrapper = styled.ul`
   border-radius: 10px;
 `;
 
-export const PostsItem = styled.li`
+export const PostsItem = styled.a`
   width: 300px;
   height: 350px;
   border-radius: 10px;
