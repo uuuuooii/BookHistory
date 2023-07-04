@@ -1,8 +1,14 @@
+'use client';
+
 import React from 'react';
 
 const PostDetail = () => {
   return (
-    <div>index</div>
+    <main>
+      <section>
+        <article>asd</article>
+      </section>
+    </main>
   );
 };
 
