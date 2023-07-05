@@ -1,6 +1,6 @@
 import React from 'react';
 import Visual from './style';
-import Posts from './Posts';
+import Posts from './posts';
 
 const Main = () => {
   return (
