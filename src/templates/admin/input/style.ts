@@ -7,8 +7,8 @@ export const InputWrapper = styled.article`
 `;
 
 export const Input = styled.textarea<{ isContent?: boolean }>`
-  width: 300px;
-  height: ${({ isContent }) => (isContent ? '150px' : '40px')};
+  width: 500px;
+  height: ${({ isContent }) => (isContent ? '300px' : '40px')};
   padding-left: 10px;
 `;
 

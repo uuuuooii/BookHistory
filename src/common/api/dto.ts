@@ -5,4 +5,5 @@ export interface PostDataProps {
   desc?: string;
   img?: string;
   content?: string;
+  updatedAt?: string;
 }

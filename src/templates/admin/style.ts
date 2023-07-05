@@ -8,5 +8,5 @@ export const Form = styled.form`
 
 export const Wapper = styled.div`
   display: flex;
-  gap: 200px;
+  gap: 35px;
 `;

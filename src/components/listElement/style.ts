@@ -9,7 +9,7 @@ export const Wrapper = styled.ul`
   border-radius: 10px;
 `;
 
-export const PostsItem = styled.a`
+export const PostsItem = styled.li`
   width: 300px;
   height: 350px;
   border-radius: 10px;
@@ -67,6 +67,7 @@ export const Icon = styled.picture`
 `;
 
 export const Contents = styled.div`
+  position: relative;
   display: grid;
   gap: 5px;
   padding: 15px;
@@ -78,6 +79,14 @@ export const ItemTitle = styled.a`
 `;
 
 export const Desc = styled.p`
+  color: ${({ theme }) => theme.colors.gray.gray01};
+  font-size: 13px;
+`;
+
+export const Data = styled.p`
+  position: absolute;
+  top: 169px;
+  left: 211px;
   color: ${({ theme }) => theme.colors.gray.gray01};
   font-size: 13px;
 `;

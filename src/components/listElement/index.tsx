@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
 import { deletePostData, getBookPostData } from '@/common/api/creatorBookPost';
 import { PostDataProps } from '@/common/api/dto';
 import * as S from './style';
@@ -20,11 +21,16 @@ const ListElement = ({
 }: ElementProps) => {
   const [postData, setPostData] = useState<PostDataProps[]>([]);
   const [isDelete, setIsDelete] = useState<boolean>(false);
+  const router = useRouter();
 
   const handleDelete = async (id: string) => {
     await deletePostData(id);
     setIsDelete(true);
     alert('삭제 되었습니다');
+  };
+
+  const onPageHandle = (id: string) => {
+    router.push(`/detail?id=${id}`);
   };
 
   useEffect(() => {
@@ -56,7 +62,7 @@ const ListElement = ({
           </S.ImageWrapper>
           <S.Contents>
             <h3>
-              <S.ItemTitle href={`/detail?id=${item._id}`}>
+              <S.ItemTitle onClick={() => onPageHandle(String(item._id))}>
                 {item.title}
               </S.ItemTitle>
             </h3>
@@ -66,6 +72,7 @@ const ListElement = ({
             <div>
               <S.Desc>{item.content}</S.Desc>
             </div>
+            <S.Data>{item.updatedAt?.substring(0, 10)}</S.Data>
           </S.Contents>
         </S.PostsItem>
       ))}

@@ -1,16 +1,17 @@
 import styled from '@emotion/styled';
 
-export const Wrapper = styled.main`
-  padding-top: 100px;
+export const Wrapper = styled.article`
   display: grid;
   align-items: center;
   justify-content: center;
+  gap: 30px;
+  padding-top: 80px;
 `;
 
 export const Picture = styled.picture`
   display: block;
   position: relative;
-  width: 500px;
+  width: 100%;
   height: 300px;
   img {
     object-fit: cover;
@@ -18,9 +19,15 @@ export const Picture = styled.picture`
 `;
 
 export const Title = styled.h4`
-  color: white;
+  font-size: 25px;
+  color: ${({ theme }) => theme.colors.neutral.white};
 `;
 
+export const Data = styled.p`
+  padding-bottom: 20px;
+  color: #999;
+  border-bottom: 1px solid ${({ theme }) => theme.colors.neutral.white};
+`;
 export const Content = styled.p`
-  color: white;
+  color: ${({ theme }) => theme.colors.neutral.white};
 `;
