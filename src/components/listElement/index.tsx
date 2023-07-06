@@ -60,9 +60,9 @@ const ListElement = ({
               </S.IconWrapper>
             )}
           </S.ImageWrapper>
-          <S.Contents>
+          <S.Contents onClick={() => onPageHandle(String(item._id))}>
             <h3>
-              <S.ItemTitle onClick={() => onPageHandle(String(item._id))}>
+              <S.ItemTitle>
                 {item.title}
               </S.ItemTitle>
             </h3>

@@ -30,4 +30,5 @@ export const Data = styled.p`
 `;
 export const Content = styled.p`
   color: ${({ theme }) => theme.colors.neutral.white};
+  white-space: pre-line;
 `;

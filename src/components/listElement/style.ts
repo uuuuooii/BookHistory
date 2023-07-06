@@ -25,6 +25,7 @@ export const ImageWrapper = styled.div`
     border-radius: 10px 10px 0 0;
     object-fit: cover;
   }
+
   &:hover {
     &:before {
       content: '';
@@ -71,6 +72,7 @@ export const Contents = styled.div`
   display: grid;
   gap: 5px;
   padding: 15px;
+  cursor: pointer;
 `;
 
 export const ItemTitle = styled.a`
