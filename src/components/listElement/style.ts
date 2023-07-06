@@ -81,6 +81,12 @@ export const ItemTitle = styled.a`
 export const Desc = styled.p`
   color: ${({ theme }) => theme.colors.gray.gray01};
   font-size: 13px;
+  white-space: pre-line;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
 `;
 
 export const Data = styled.p`
