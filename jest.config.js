@@ -1,18 +1,13 @@
-module.exports = {
-  plugins: [
-    '@emotion',
-    '@babel/plugin-proposal-optional-chaining',
-    '@babel/plugin-proposal-nullish-coalescing-operator',
-  ],
-  presets: [
-    [
-      '@babel/preset-react',
-      {
-        runtime: 'automatic',
-        importSource: '@emotion/react',
-      },
-    ],
-    ['@babel/preset-env', { targets: { node: 'current' } }],
-    '@babel/preset-typescript',
-  ],
+const nextJest = require('next/jest');
+
+const createJestConfig = nextJest({
+  dir: './',
+});
+
+// Add any custom config to be passed to Jest
+const customJestConfig = {
+  setupFilesAfterEnv: ['<rootDir>/jest.setup.js'],
+  testEnvironment: 'jest-environment-jsdom',
 };
+
+module.exports = createJestConfig(customJestConfig);

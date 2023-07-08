@@ -10,8 +10,8 @@ export const Wrapper = styled.ul`
 `;
 
 export const PostsItem = styled.li`
-  width: 300px;
-  height: 350px;
+  width: 310px;
+  height: 410px;
   border-radius: 10px;
   background: ${({ theme }) => theme.colors.neutral.white};
 `;
@@ -20,7 +20,7 @@ export const ImageWrapper = styled.div`
   position: relative;
   display: block;
   width: 100%;
-  height: 150px;
+  height: 200px;
   img {
     border-radius: 10px 10px 0 0;
     object-fit: cover;
@@ -61,8 +61,8 @@ export const Icon = styled.picture`
   position: relative;
   width: 20px;
   height: 20px;
-  top: 110px;
-  left: 233px;
+  top: 153px;
+  left: 243px;
   z-index: 1;
   cursor: pointer;
 `;
@@ -93,7 +93,7 @@ export const Desc = styled.p`
 
 export const Data = styled.p`
   position: absolute;
-  top: 169px;
+  top: 181px;
   left: 211px;
   color: ${({ theme }) => theme.colors.gray.gray01};
   font-size: 13px;

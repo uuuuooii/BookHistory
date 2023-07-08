@@ -42,7 +42,6 @@ const AdminInput = ({
         placeholder="완독 후기를 입력해주세요"
         value={editItem?.content || contentInput.inputValue}
         onChange={(e) => { onChangeInput(e, 'content'); contentInput.onChangeInput(e); }}
-        maxLength={200}
       />
       <S.Button type="submit">submit</S.Button>
     </S.InputWrapper>

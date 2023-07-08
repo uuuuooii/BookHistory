@@ -9,7 +9,7 @@ const Header = () => {
 
   const scrollHandler = () => {
     const scrollHeight = window.scrollY;
-    if (scrollHeight > 100) {
+    if (scrollHeight > 30) {
       setIsShow(true);
     } else {
       setIsShow(false);
@@ -28,7 +28,7 @@ const Header = () => {
       <S.Navigation>
         <h1>
           <Link href="/">
-            <S.Title>BooK History</S.Title>
+            <S.Title isShow={isShow}>BooK History</S.Title>
           </Link>
         </h1>
       </S.Navigation>

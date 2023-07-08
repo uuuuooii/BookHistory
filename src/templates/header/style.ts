@@ -9,14 +9,12 @@ export const Wrapper = styled.header<{ isShow: boolean }>`
   width: 100%;
   height: 68px;
   padding: 0 56px;
-  background: ${({ theme, isShow }) =>
-    isShow
-      ? theme.colors.neutral.black
-      : `linear-gradient(
-    180deg,
-    rgba(0, 0, 0, 0.7) 10%,
-    transparent
-  )`};
+  background: ${({ isShow }) =>
+    isShow &&
+    `background: transparent;
+    box-shadow: inset 0 -1px 0 0 rgba(0,0,0,.1);
+    backdrop-filter: saturate(180%) blur(16px);
+    `};
   z-index: 10;
 `;
 
@@ -25,6 +23,7 @@ export const Navigation = styled.nav`
   gap: 30px;
 `;
 
-export const Title = styled.p`
-  color: ${({ theme }) => theme.colors.neutral.white};
+export const Title = styled.p<{ isShow: boolean }>`
+  color: ${({ isShow, theme }) =>
+    isShow ? theme.colors.neutral.black : theme.colors.neutral.white};
 `;
