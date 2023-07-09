@@ -2,19 +2,8 @@
 
 import styled from '@emotion/styled';
 
-export const TitleContent = styled.div`
-  display: grid;
-  gap: 10px;
-  padding-bottom: 30px;
+const Wrapper = styled.div`
+  position: relative;
+  bottom: 100px;
 `;
-
-export const Title = styled.h3`
-  color: ${({ theme }) => theme.colors.neutral.white};
-  font-size: 1.375rem;
-  font-weight: 500;
-`;
-
-export const Desc = styled.p`
-  color: ${({ theme }) => theme.colors.neutral.white};
-  font-size: 0.875rem;
-`;
+export default Wrapper;
