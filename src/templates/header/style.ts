@@ -26,7 +26,6 @@ export const Navigation = styled.nav`
   gap: 30px;
 `;
 
-export const Title = styled.p<{ isShow: boolean }>`
-  color: ${({ isShow, theme }) =>
-    isShow ? theme.colors.neutral.black : theme.colors.neutral.white};
+export const Title = styled.p`
+  color: ${({ theme }) => theme.colors.neutral.white};
 `;

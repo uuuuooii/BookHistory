@@ -27,7 +27,7 @@ export const ImageWrapper = styled.div`
   }
 
   &:hover {
-    &:before {
+    /* &:before {
       content: '';
       position: absolute;
       top: 0;
@@ -42,7 +42,7 @@ export const ImageWrapper = styled.div`
         rgba(0, 0, 0, 0.6) 100%
       );
       z-index: 1;
-    }
+    } */
     div {
       display: flex;
       position: absolute;

@@ -28,7 +28,7 @@ const Header = () => {
       <S.Navigation>
         <h1>
           <Link href="/">
-            <S.Title isShow={isShow}>BooK History</S.Title>
+            <S.Title>BooK History</S.Title>
           </Link>
         </h1>
       </S.Navigation>
