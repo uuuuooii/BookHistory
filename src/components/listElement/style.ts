@@ -76,7 +76,6 @@ export const Icon = styled.picture`
 
 export const Contents = styled.div`
   position: relative;
-  height: 198px;
   padding: 15px;
   cursor: pointer;
 `;
