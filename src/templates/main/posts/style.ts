@@ -10,10 +10,11 @@ export const TitleContent = styled.div`
 
 export const Title = styled.h3`
   color: ${({ theme }) => theme.colors.neutral.white};
-  font-size: 22px;
+  font-size: 1.375rem;
+  font-weight: 500;
 `;
 
 export const Desc = styled.p`
   color: ${({ theme }) => theme.colors.neutral.white};
-  font-size: 14px;
+  font-size: 0.875rem;
 `;

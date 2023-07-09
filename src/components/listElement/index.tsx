@@ -67,7 +67,7 @@ const ListElement = ({
               </S.ItemTitle>
             </h3>
             <div>
-              <div>{item.star}</div>
+              <S.Star>{item.star}</S.Star>
             </div>
             <div>
               <S.Desc>{item.content}</S.Desc>

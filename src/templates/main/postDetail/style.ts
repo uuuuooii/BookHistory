@@ -19,7 +19,7 @@ export const Picture = styled.picture`
 `;
 
 export const Title = styled.h4`
-  font-size: 25px;
+  font-size: 1.563rem;
   color: ${({ theme }) => theme.colors.neutral.white};
 `;
 

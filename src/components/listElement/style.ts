@@ -10,22 +10,29 @@ export const Wrapper = styled.ul`
 `;
 
 export const PostsItem = styled.li`
-  width: 310px;
-  height: 410px;
+  display: flex;
+  width: 394px;
+  height: 298px;
   border-radius: 10px;
   background: ${({ theme }) => theme.colors.neutral.white};
+
+  @media screen and (max-width: 899px) {
+    width: 350px;
+  }
 `;
 
 export const ImageWrapper = styled.div`
   position: relative;
   display: block;
-  width: 100%;
-  height: 200px;
+  min-width: 173px;
+  height: 298px;
   img {
-    border-radius: 10px 10px 0 0;
+    border-radius: 10px 0 0 10px;
     object-fit: cover;
   }
-
+  @media screen and (max-width: 599px) {
+    min-width: 136px;
+  }
   &:hover {
     /* &:before {
       content: '';
@@ -61,28 +68,31 @@ export const Icon = styled.picture`
   position: relative;
   width: 20px;
   height: 20px;
-  top: 153px;
-  left: 243px;
+  top: 11px;
+  left: 110px;
   z-index: 1;
   cursor: pointer;
 `;
 
 export const Contents = styled.div`
   position: relative;
-  display: grid;
-  gap: 5px;
+  height: 198px;
   padding: 15px;
   cursor: pointer;
 `;
 
 export const ItemTitle = styled.a`
-  font-size: 18px;
+  font-size: 1.125rem;
   font-weight: 500;
+`;
+
+export const Star = styled.div`
+  padding: 10px 0;
 `;
 
 export const Desc = styled.p`
   color: ${({ theme }) => theme.colors.gray.gray01};
-  font-size: 13px;
+  font-size: 0.813rem;
   white-space: pre-line;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -93,8 +103,8 @@ export const Desc = styled.p`
 
 export const Data = styled.p`
   position: absolute;
-  top: 181px;
-  left: 211px;
+  top: 263px;
+  left: 18px;
   color: ${({ theme }) => theme.colors.gray.gray01};
-  font-size: 13px;
+  font-size: 0.813rem;
 `;
