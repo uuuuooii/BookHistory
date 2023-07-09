@@ -6,7 +6,7 @@ export const Wrapper = styled.ul`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 15px;
+  gap: 25px;
   border-radius: 10px;
 `;
 
