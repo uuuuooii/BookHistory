@@ -86,6 +86,10 @@ export const ItemTitle = styled.a`
   font-weight: 500;
 `;
 
+export const Count = styled.span`
+  color: ${({ theme }) => theme.colors.gray.gray01};
+`;
+
 export const Star = styled.div`
   padding: 10px 0;
 `;

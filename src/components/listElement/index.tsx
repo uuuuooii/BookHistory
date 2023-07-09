@@ -43,7 +43,7 @@ const ListElement = ({
 
   return (
     <S.Wrapper>
-      {postData.map((item) => (
+      {postData.map((item, index) => (
         <S.PostsItem
           key={item.title}
         >
@@ -62,8 +62,13 @@ const ListElement = ({
           </S.ImageWrapper>
           <S.Contents onClick={() => onPageHandle(String(item._id))}>
             <h3>
+
               <S.ItemTitle>
                 {item.title}
+                <S.Count>
+                  &nbsp;#
+                  {postData.length - index}
+                </S.Count>
               </S.ItemTitle>
             </h3>
             <div>

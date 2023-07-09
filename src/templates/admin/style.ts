@@ -6,7 +6,11 @@ export const Form = styled.form`
   padding-top: 100px;
 `;
 
-export const Wapper = styled.div`
+export const Wrapper = styled.div`
   display: flex;
   gap: 35px;
+`;
+
+export const PreviewWrapper = styled.div`
+  width: 500px;
 `;

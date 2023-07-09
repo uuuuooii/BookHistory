@@ -56,8 +56,10 @@ const Admin = () => {
   return (
     <S.Form onSubmit={handleSubmit}>
       <Inner>
-        <S.Wapper>
-          <Preview isUpload={isUpload} editItem={editItem} />
+        <S.Wrapper>
+          <S.PreviewWrapper>
+            <Preview isUpload={isUpload} editItem={editItem} />
+          </S.PreviewWrapper>
           <AdminInput
             titleInput={titleInput}
             imageInput={imageInput}
@@ -65,7 +67,7 @@ const Admin = () => {
             starInput={starInput}
             editItem={editItem.selecteItem}
           />
-        </S.Wapper>
+        </S.Wrapper>
       </Inner>
     </S.Form>
   );

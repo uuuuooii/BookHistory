@@ -2,6 +2,11 @@ import styled from '@emotion/styled';
 
 export const InputWrapper = styled.article`
   display: grid;
+  position: fixed;
+  width: 500px;
+  height: 500px;
+  right: 50px;
+  background: black;
   gap: 20px;
   height: 30px;
 `;
