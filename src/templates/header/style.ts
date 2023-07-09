@@ -9,11 +9,14 @@ export const Wrapper = styled.header<{ isShow: boolean }>`
   width: 100%;
   height: 68px;
   padding: 0 56px;
-  background: ${({ isShow }) =>
-    isShow &&
-    `background: transparent;
+
+  background: ${({ isShow, theme }) =>
+    isShow
+      ? `background: transparent;
     box-shadow: inset 0 -1px 0 0 rgba(0,0,0,.1);
     backdrop-filter: saturate(180%) blur(16px);
+    `
+      : `${theme.colors.neutral.black};
     `};
   z-index: 10;
 `;
