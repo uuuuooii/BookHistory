@@ -4,6 +4,6 @@ import styled from '@emotion/styled';
 
 const Wrapper = styled.div`
   position: relative;
-  bottom: 100px;
+  bottom: 80px;
 `;
 export default Wrapper;
