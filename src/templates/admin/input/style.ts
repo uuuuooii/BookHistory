@@ -5,7 +5,7 @@ export const InputWrapper = styled.article`
   position: fixed;
   width: 500px;
   height: 500px;
-  right: 50px;
+  right: 100px;
   background: black;
   gap: 20px;
   height: 30px;

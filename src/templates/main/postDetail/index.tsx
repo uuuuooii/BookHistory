@@ -28,16 +28,18 @@ const PostDetail = () => {
   }, [postId, postData]);
 
   return (
-    <Inner>
-      <S.Wrapper>
-        <S.Picture>
-          <Image src={selectedPost?.img || ''} alt="image" fill />
-        </S.Picture>
-        <S.Title>{selectedPost?.title}</S.Title>
-        <S.Data>{selectedPost?.updatedAt?.substring(0, 10)}</S.Data>
-        <S.Content>{selectedPost?.content}</S.Content>
-      </S.Wrapper>
-    </Inner>
+    <S.Wrapper>
+      <Inner>
+        <S.ContentWrapper>
+          <S.Picture>
+            <Image src={selectedPost?.img || ''} alt="image" fill />
+          </S.Picture>
+          <S.Title>{selectedPost?.title}</S.Title>
+          <S.Data>{selectedPost?.updatedAt?.substring(0, 10)}</S.Data>
+          <S.Content>{selectedPost?.content}</S.Content>
+        </S.ContentWrapper>
+      </Inner>
+    </S.Wrapper>
   );
 };
 
