@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useCallback, useState } from 'react';
 
 const useInput = (defaultValue?: string) => {
   const [inputValue, setInputValue] = useState<string>(defaultValue ?? '');
@@ -7,7 +7,11 @@ const useInput = (defaultValue?: string) => {
     setInputValue(e.currentTarget.value);
   };
 
-  return { inputValue, onChangeInput };
+  const reset = () => {
+    setInputValue('');
+  };
+
+  return { inputValue, onChangeInput, reset };
 };
 
 export default useInput;

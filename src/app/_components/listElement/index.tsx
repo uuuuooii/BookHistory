@@ -3,8 +3,8 @@
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
-import { deletePostData, getBookPostData } from '@/common/api/creatorBookPost';
-import { PostDataProps } from '@/common/api/dto';
+import { deletePostData, getBookPostData } from '@/app/_app/api/creatorBookPost';
+import { PostDataProps } from '@/app/_app/api/dto';
 import * as S from './style';
 
 interface ElementProps {
@@ -36,6 +36,7 @@ const ListElement = ({
   useEffect(() => {
     const getPostData = async () => {
       const res = await getBookPostData();
+      console.log(res.data);
       setPostData(res.data.reverse());
     };
     getPostData();

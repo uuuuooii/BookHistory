@@ -1,6 +1,6 @@
 import React from 'react';
 import Select from './style';
-import selectStarData from '@/common/data';
+import selectStarData from '@/app/_lib/data';
 import { SelectStarProps } from '../type';
 
 const SelectStar = ({ starInput, editItem }: SelectStarProps) => {

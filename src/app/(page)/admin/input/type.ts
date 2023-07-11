@@ -1,5 +1,5 @@
 import React from 'react';
-import { PostDataProps } from '@/common/api/dto';
+import { PostDataProps } from '@/app/_app/api/dto';
 
 export interface InputProps {
   inputValue: string;
@@ -8,6 +8,7 @@ export interface InputProps {
       value: React.SetStateAction<string>;
     };
   }) => void;
+  reset: () => void;
 }
 export interface SelectStarProps {
   starInput: InputProps;

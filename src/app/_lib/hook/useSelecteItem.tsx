@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { PostDataProps } from '../api/dto';
+import { PostDataProps } from '../../_app/api/dto';
 
 const useSelecteItem = () => {
   const [selecteItem, setSelecteItem] = useState<PostDataProps>();

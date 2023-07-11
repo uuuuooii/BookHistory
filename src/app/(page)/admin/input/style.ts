@@ -18,6 +18,12 @@ export const Input = styled.textarea<{ isContent?: boolean }>`
 `;
 
 export const Button = styled.button`
+  width: 100%;
   height: 40px;
   background: aquamarine;
+`;
+
+export const ButtonWrapper = styled.div`
+  display: flex;
+  gap: 20px;
 `;

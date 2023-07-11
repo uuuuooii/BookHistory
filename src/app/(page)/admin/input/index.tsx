@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback, useRef } from 'react';
 import * as S from './style';
 import SelectStar from './star';
 import { AdminInputProps } from './type';
@@ -24,8 +24,15 @@ const AdminInput = ({
     }
   };
 
+  const reset = () => {
+    titleInput.reset();
+    imageInput.reset();
+    contentInput.reset();
+  };
+
   return (
     <S.InputWrapper>
+
       <S.Input
         placeholder="책 제목을 입력해주세요"
         value={editItem?.title || titleInput.inputValue}
@@ -43,7 +50,10 @@ const AdminInput = ({
         value={editItem?.content || contentInput.inputValue}
         onChange={(e) => { onChangeInput(e, 'content'); contentInput.onChangeInput(e); }}
       />
-      <S.Button type="submit">submit</S.Button>
+      <S.ButtonWrapper>
+        <S.Button type="submit">submit</S.Button>
+        <S.Button type="button" onClick={() => reset()}>reset</S.Button>
+      </S.ButtonWrapper>
     </S.InputWrapper>
   );
 };
