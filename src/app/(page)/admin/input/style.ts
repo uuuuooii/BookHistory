@@ -17,10 +17,10 @@ export const Input = styled.textarea<{ isContent?: boolean }>`
   padding-left: 10px;
 `;
 
-export const Button = styled.button`
+export const Button = styled.button<{ isReset?: boolean }>`
   width: 100%;
   height: 40px;
-  background: aquamarine;
+  background: ${({ isReset }) => (isReset ? '#ff6878' : 'aquamarine')};
 `;
 
 export const ButtonWrapper = styled.div`

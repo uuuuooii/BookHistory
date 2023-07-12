@@ -51,8 +51,8 @@ const AdminInput = ({
         onChange={(e) => { onChangeInput(e, 'content'); contentInput.onChangeInput(e); }}
       />
       <S.ButtonWrapper>
+        <S.Button type="button" isReset onClick={() => reset()}>reset</S.Button>
         <S.Button type="submit">submit</S.Button>
-        <S.Button type="button" onClick={() => reset()}>reset</S.Button>
       </S.ButtonWrapper>
     </S.InputWrapper>
   );
