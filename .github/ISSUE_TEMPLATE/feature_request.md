@@ -7,8 +7,6 @@ assignees: ''
 
 ---
 
-## Issue
-
 ## Description
 설명을 작성하세요.
 
@@ -18,5 +16,3 @@ assignees: ''
 
 ## ETC
 기타사항
-
-## ETC
