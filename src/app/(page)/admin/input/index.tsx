@@ -1,4 +1,4 @@
-import React, { useCallback, useRef } from 'react';
+import React from 'react';
 import * as S from './style';
 import SelectStar from './star';
 import { AdminInputProps } from './type';

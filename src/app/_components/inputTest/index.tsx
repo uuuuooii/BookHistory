@@ -9,7 +9,7 @@ type InputStyleProps = {
 
 const InputStyle = styled.input<InputStyleProps>`
   width: 100%;
-  /* ${(props) => inputSize[props.size || 'medium']}; */
+  ${({ size }) => size && inputSize[size]};
   border-bottom: 1px solid #E0E0E0;
 `;
 
@@ -20,7 +20,11 @@ interface InputProps extends InputStyleProps {
 
 const Input = ({ placeholder, value, ...styleProps }: InputProps) => {
   return (
-    <InputStyle {...styleProps} placeholder={placeholder} value={value} />
+    <InputStyle
+      {...styleProps}
+      placeholder={placeholder}
+      value={value}
+    />
 
   );
 };
