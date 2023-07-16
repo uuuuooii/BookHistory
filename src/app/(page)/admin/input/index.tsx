@@ -1,7 +1,7 @@
 import React from 'react';
-import * as S from './style';
 import SelectStar from './star';
 import { AdminInputProps } from './type';
+import * as S from './style';
 
 const AdminInput = ({
   titleInput, starInput, imageInput, contentInput, editItem
