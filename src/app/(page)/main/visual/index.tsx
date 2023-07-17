@@ -1,6 +1,6 @@
 import React from 'react';
-import * as S from './style';
 import { Wrapper } from './style';
+import * as S from './style';
 
 const Visual = () => {
   return (
