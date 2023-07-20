@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
-import { useSearchParams, usePathname } from 'next/navigation';
+import { useSearchParams } from 'next/navigation';
 import Image from 'next/image';
 import { getBookPostData } from '@/app/_app/api/creatorBookPost';
 import { PostDataProps } from '@/app/_app/api/dto';
