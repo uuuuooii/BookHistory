@@ -4,6 +4,7 @@ import Header from '@/app/_components/header';
 import globals from './globals';
 import Global from '@/app/_lib/provider/styleProvider';
 import ThemeProvider from '@/app/_lib/provider/themeProvider';
+import AuthProvider from './_lib/provider/authProvider';
 
 export const metadata = {
   title: 'BookHistory',
@@ -19,9 +20,11 @@ const RootLayout = ({
     <html lang="en">
       <body style={{ background: '#141414' }}>
         <ThemeProvider theme={theme}>
-          <Global styles={globals} />
-          <Header />
-          {children}
+          <AuthProvider>
+            <Global styles={globals} />
+            <Header />
+            {children}
+          </AuthProvider>
         </ThemeProvider>
       </body>
     </html>
