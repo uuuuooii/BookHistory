@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 
+// eslint-disable-next-line import/no-extraneous-dependencies
 import bcrypt from 'bcryptjs';
 import connect from '@/app/_app/api/mongoose/db';
 import user from '@/app/_app/api/mongoose/schema/user';
