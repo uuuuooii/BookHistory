@@ -25,7 +25,7 @@ const POST = async (request: NextRequest) => {
       status: 201,
     });
   } catch (err) {
-    return new NextResponse('err.meesage', {
+    return new NextResponse(err.message, {
       status: 500,
     });
   }

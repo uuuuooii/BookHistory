@@ -12,6 +12,7 @@ const Register = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
     const name = e.target[0].value;
     const email = e.target[1].value;
     const password = e.target[2].value;
@@ -29,9 +30,10 @@ const Register = () => {
         })
       });
 
-      res.status === 201 && router.push('/login?succes=Account has been created');
+      res.status === 201 && router.push('/login?success=Account has been created');
     } catch (err) {
       setIsErr(true);
+      console.log(err);
     }
   };
 
@@ -54,7 +56,7 @@ const Register = () => {
             placeholder="password"
             required
           />
-          <S.Button type="button">Register</S.Button>
+          <S.Button type="submit">Register</S.Button>
           <S.Link>
             {isErr && 'Something went wrong!'}
             <Link href="/login">Login with an existing account</Link>
