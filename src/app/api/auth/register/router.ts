@@ -5,6 +5,7 @@ import bcrypt from 'bcryptjs';
 import connect from '@/app/_app/api/mongoose/db';
 import user from '@/app/_app/api/mongoose/schema/user';
 
+// 400에러남
 const POST = async (request: NextRequest) => {
   const { name, email, password } = await request.json();
 
