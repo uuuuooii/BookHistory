@@ -3,6 +3,12 @@ import { PostRegister } from './dto';
 import { REGISTER_URL } from './url';
 
 const postRegister = async (data: PostRegister): Promise<AxiosResponse> => {
-  return axios.post(REGISTER_URL, data);
+  const config = {
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  };
+
+  return axios.post(REGISTER_URL, data, config);
 };
 export default postRegister;

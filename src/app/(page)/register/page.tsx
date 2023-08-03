@@ -4,8 +4,8 @@ import Link from 'next/link';
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Inner from '@/app/_components/inner';
-import * as S from './style';
 import postRegister from '@/app/_lib/api/register';
+import * as S from './style';
 
 const Register = () => {
   const [isErr, setIsErr] = useState(false);
@@ -17,7 +17,7 @@ const Register = () => {
     const name = e.target[0].value;
     const email = e.target[1].value;
     const password = e.target[2].value;
-    console.log(name)
+
     try {
       const data = {
         name,
@@ -26,7 +26,6 @@ const Register = () => {
       };
 
       const res = await postRegister(data);
-      console.log(res.data)
       res.status === 201 && router.push('/login?success=Account has been created');
     } catch (err) {
       setIsErr(true);

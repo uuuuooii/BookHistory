@@ -1,19 +1,16 @@
 import { NextRequest, NextResponse } from 'next/server';
-
 // eslint-disable-next-line import/no-extraneous-dependencies
 import bcrypt from 'bcryptjs';
 import connect from '@/app/_lib/api/mongoose/db';
 import user from '@/app/_lib/api/mongoose/schema/user';
 
-// 400에러남
-const POST = async (request: NextRequest) => {
+export const POST = async (request: NextRequest) => {
   const { name, email, password } = await request.json();
 
   await connect();
 
   const hashedPassword = await bcrypt.hash(password, 5);
 
-  // eslint-disable-next-line new-cap
   const newUser = new user({
     name,
     email,
@@ -26,10 +23,11 @@ const POST = async (request: NextRequest) => {
       status: 201,
     });
   } catch (err) {
+    console.error(err);
     return new NextResponse(err.message, {
       status: 500,
     });
   }
 };
 
-export default POST;
+export const GET = () => {};
