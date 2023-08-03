@@ -1,12 +1,12 @@
 import { NextRequest, NextResponse } from 'next/server';
 import connect from '@/app/_lib/api/mongoose/db';
-import post from '@/app/_lib/api/mongoose/schema/post';
+import Post from '@/app/_lib/api/mongoose/schema/post';
 
 export const GET = async () => {
   try {
     await connect();
 
-    const posts = await post.find();
+    const posts = await Post.find();
 
     return new NextResponse(JSON.stringify(posts), {
       status: 200,
@@ -22,8 +22,7 @@ export const GET = async () => {
 
 export const POST = async (request: NextRequest) => {
   const body = await request.json();
-  // eslint-disable-next-line new-cap
-  const newPost = new post(body);
+  const newPost = new Post(body);
   try {
     await connect();
 
@@ -47,7 +46,7 @@ export const PUT = async (request: NextRequest) => {
   try {
     await connect();
 
-    const editPost = await post.findOneAndReplace(
+    const editPost = await Post.findOneAndReplace(
       { _id: body.id },
       {
         _id: body.newId,

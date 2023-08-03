@@ -1,8 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
-// eslint-disable-next-line import/no-extraneous-dependencies
 import bcrypt from 'bcryptjs';
 import connect from '@/app/_lib/api/mongoose/db';
-import user from '@/app/_lib/api/mongoose/schema/user';
+import User from '@/app/_lib/api/mongoose/schema/user';
 
 export const POST = async (request: NextRequest) => {
   const { name, email, password } = await request.json();
@@ -11,7 +10,7 @@ export const POST = async (request: NextRequest) => {
 
   const hashedPassword = await bcrypt.hash(password, 5);
 
-  const newUser = new user({
+  const newUser = new User({
     name,
     email,
     password: hashedPassword,
