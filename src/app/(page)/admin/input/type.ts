@@ -1,5 +1,5 @@
 import React from 'react';
-import { PostDataProps } from '@/app/_app/api/dto';
+import { PostDataProps } from '@/app/_lib/api/dto';
 
 export interface InputProps {
   inputValue: string;

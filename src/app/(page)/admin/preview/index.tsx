@@ -1,7 +1,7 @@
 import React from 'react';
 import ListElement from '@/app/_components/listElement';
 import Wrapper from './style';
-import { PostDataProps } from '@/app/_app/api/dto';
+import { PostDataProps } from '@/app/_lib/api/dto';
 
 interface PreviewProps {
   isUpload: boolean,

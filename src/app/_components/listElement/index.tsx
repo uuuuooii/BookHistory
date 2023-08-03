@@ -3,8 +3,8 @@
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
-import { deletePostData, getBookPostData } from '@/app/_app/api/creatorBookPost';
-import { PostDataProps } from '@/app/_app/api/dto';
+import { deletePostData, getBookPostData } from '@/app/_lib/api/creatorBookPost';
+import { PostDataProps } from '@/app/_lib/api/dto';
 import * as S from './style';
 
 interface ElementProps {

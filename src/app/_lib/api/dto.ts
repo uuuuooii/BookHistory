@@ -7,3 +7,9 @@ export interface PostDataProps {
   content?: string;
   updatedAt?: string;
 }
+
+export interface PostRegister {
+  name: string;
+  email: string;
+  password: string;
+}

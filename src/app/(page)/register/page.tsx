@@ -5,6 +5,7 @@ import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Inner from '@/app/_components/inner';
 import * as S from './style';
+import postRegister from '@/app/_lib/api/register';
 
 const Register = () => {
   const [isErr, setIsErr] = useState(false);
@@ -16,20 +17,16 @@ const Register = () => {
     const name = e.target[0].value;
     const email = e.target[1].value;
     const password = e.target[2].value;
-
+    console.log(name)
     try {
-      const res = await fetch('/api/auth/register', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          name,
-          email,
-          password
-        })
-      });
+      const data = {
+        name,
+        email,
+        password
+      };
 
+      const res = await postRegister(data);
+      console.log(res.data)
       res.status === 201 && router.push('/login?success=Account has been created');
     } catch (err) {
       setIsErr(true);

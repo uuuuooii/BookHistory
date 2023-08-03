@@ -2,8 +2,8 @@ import { NextRequest, NextResponse } from 'next/server';
 
 // eslint-disable-next-line import/no-extraneous-dependencies
 import bcrypt from 'bcryptjs';
-import connect from '@/app/_app/api/mongoose/db';
-import user from '@/app/_app/api/mongoose/schema/user';
+import connect from '@/app/_lib/api/mongoose/db';
+import user from '@/app/_lib/api/mongoose/schema/user';
 
 // 400에러남
 const POST = async (request: NextRequest) => {
