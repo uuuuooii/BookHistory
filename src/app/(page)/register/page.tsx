@@ -11,12 +11,12 @@ const Register = () => {
   const [isErr, setIsErr] = useState(false);
   const router = useRouter();
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    const name = e.target[0].value;
-    const email = e.target[1].value;
-    const password = e.target[2].value;
+    const name = (e.currentTarget[0] as HTMLInputElement).value;
+    const email = (e.currentTarget[1] as HTMLInputElement).value;
+    const password = (e.currentTarget[2] as HTMLInputElement).value;
 
     try {
       const data = {
@@ -26,7 +26,10 @@ const Register = () => {
       };
 
       const res = await postRegister(data);
-      res.status === 201 && router.push('/login?success=Account has been created');
+
+      if (res.status === 201) {
+        router.push('/login?success=Account has been created');
+      }
     } catch (err) {
       setIsErr(true);
       console.log(err);

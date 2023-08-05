@@ -2,15 +2,15 @@
 
 import { signIn } from 'next-auth/react';
 import React from 'react';
-import * as S from './style';
+import Wrapper from './style';
 
 const Login = () => {
   return (
-    <S.Wrapper>
+    <Wrapper>
       <button type="button" onClick={() => signIn('google')}>
         Login with Google
       </button>
-    </S.Wrapper>
+    </Wrapper>
   );
 };
 

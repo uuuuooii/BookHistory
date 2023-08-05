@@ -23,7 +23,7 @@ export const POST = async (request: NextRequest) => {
     });
   } catch (err) {
     console.error(err);
-    return new NextResponse(err.message, {
+    return new NextResponse('error', {
       status: 500,
     });
   }
