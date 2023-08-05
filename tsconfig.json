@@ -31,7 +31,8 @@
     ".next/types/**/*.ts",
     "src/app/_lib/api/mongoose/db.ts",
     "src/app/_lib/api/mongoose/schema/post.ts",
-    "__test__/src/components/.test.tsx"
+    "__test__/src/components/.test.tsx",
+    "completionLog.js"
   ],
   "exclude": ["node_modules"]
 }
