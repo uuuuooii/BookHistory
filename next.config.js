@@ -17,9 +17,9 @@ module.exports = {
     API_BASE_URL: process.env.API_BASE_URL,
   },
   webpack: (NextConfig, { isServer }) => {
-    // if (!isServer) {
-    NextConfig.plugins.push(new CompletionLog());
-    // }
+    if (!isServer) {
+      NextConfig.plugins.push(new CompletionLog());
+    }
     return NextConfig;
   },
 };
