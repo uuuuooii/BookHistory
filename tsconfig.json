@@ -32,7 +32,8 @@
     "src/app/_lib/api/mongoose/db.ts",
     "src/app/_lib/api/mongoose/schema/post.ts",
     "__test__/src/components/.test.tsx",
-    "completionLog.js"
+    "completionLog.js",
+    "src/app/_components/errorBoundary.js"
   ],
   "exclude": ["node_modules"]
 }
