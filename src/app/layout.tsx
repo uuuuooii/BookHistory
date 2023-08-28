@@ -5,7 +5,7 @@ import globals from './globals';
 import Global from '@/app/_lib/provider/styleProvider';
 import ThemeProvider from '@/app/_lib/provider/themeProvider';
 import AuthProvider from './_lib/provider/authProvider';
-import ErrorBoundary from './_components/ErrorBoundary';
+import ErrorBoundary from './_components/errorBoundary';
 
 export const metadata = {
   title: 'BookHistory',
