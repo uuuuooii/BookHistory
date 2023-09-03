@@ -9,6 +9,7 @@ export const POST = async (request: NextRequest) => {
 
   await connect();
 
+  // 비밀번호 암호화
   const hashedPassword = await bcrypt.hash(password, 5);
 
   const newUser = new User({
