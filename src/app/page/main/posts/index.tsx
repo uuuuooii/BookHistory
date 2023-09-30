@@ -1,6 +1,6 @@
 import React from 'react';
-import ListElement from '@/app/_components/listElement';
-import Inner from '@/app/_components/inner';
+import ListElement from '@/app/components/listElement';
+import Inner from '@/app/components/inner';
 import Wrapper from './style';
 
 const Posts = () => {

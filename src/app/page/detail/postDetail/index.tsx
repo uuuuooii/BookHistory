@@ -3,9 +3,9 @@
 import React, { useEffect, useState } from 'react';
 import { useSearchParams } from 'next/navigation';
 import Image from 'next/image';
-import { getBookPostData } from '@/app/_lib/api/creatorBookPost';
-import { PostDataProps } from '@/app/_lib/api/dto';
-import Inner from '@/app/_components/inner';
+import { getBookPostData } from '@/app/lib/api/creatorBookPost';
+import { PostDataProps } from '@/app/lib/api/dto';
+import Inner from '@/app/components/inner';
 import * as S from './style';
 
 const PostDetail = () => {

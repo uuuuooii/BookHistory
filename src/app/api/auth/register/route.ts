@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import bcrypt from 'bcryptjs';
-import connect from '@/app/_lib/api/mongoose/db';
-import User from '@/app/_lib/api/mongoose/schema/user';
+import connect from '@/app/lib/api/mongoose/db';
+import User from '@/app/lib/api/mongoose/schema/user';
 
 // eslint-disable-next-line import/prefer-default-export
 export const POST = async (request: NextRequest) => {

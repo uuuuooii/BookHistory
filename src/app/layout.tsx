@@ -1,11 +1,11 @@
 import React, { ReactNode } from 'react';
-import theme from '@/app/_lib/styles/theme';
-import Header from '@/app/_components/header';
+import theme from '@/app/lib/styles/theme';
+import Header from '@/app/components/header';
 import globals from './globals';
-import Global from '@/app/_lib/provider/styleProvider';
-import ThemeProvider from '@/app/_lib/provider/themeProvider';
-import AuthProvider from './_lib/provider/authProvider';
-import ErrorBoundary from './_components/errorBoundary';
+import Global from '@/app/lib/provider/styleProvider';
+import ThemeProvider from '@/app/lib/provider/themeProvider';
+import AuthProvider from './lib/provider/authProvider';
+import ErrorBoundary from './components/errorBoundary';
 
 export const metadata = {
   title: 'BookHistory',

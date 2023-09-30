@@ -2,8 +2,8 @@ import bcrypt from 'bcryptjs';
 import NextAuth from 'next-auth';
 import GoogleProvider from 'next-auth/providers/google';
 import CredentialsProvider from 'next-auth/providers/credentials';
-import connect from '@/app/_lib/api/mongoose/db';
-import User from '@/app/_lib/api/mongoose/schema/user';
+import connect from '@/app/lib/api/mongoose/db';
+import User from '@/app/lib/api/mongoose/schema/user';
 
 interface UserProps {
   name: string;
