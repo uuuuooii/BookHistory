@@ -17,37 +17,37 @@ const handler = NextAuth({
       clientId: process.env.GOOGLE_CLIENT_ID || '',
       clientSecret: process.env.GOOGLE_CLIENT_SECRET || '',
     }),
-    CredentialsProvider({
-      id: 'credentials',
-      name: 'Credentials',
-      async authorize(credentials) {
-        await connect();
+    // CredentialsProvider({
+    //   id: 'credentials',
+    //   name: 'Credentials',
+    //   async authorize(credentials) {
+    //     await connect();
 
-        console.log(credentials);
+    //     console.log(credentials);
 
-        try {
-          const user = User.findOne({ email: credentials.email });
+    //     try {
+    //       const user = User.findOne({ email: credentials.email });
 
-          if (user) {
-            // 비밀번호 체크
-            const isPasswordCorrect = await bcrypt.compare(
-              credentials.password,
-              user.password
-            );
+    //       if (user) {
+    //         // 비밀번호 체크
+    //         const isPasswordCorrect = await bcrypt.compare(
+    //           credentials.password,
+    //           user.password
+    //         );
 
-            if (isPasswordCorrect) {
-              return user;
-            }
-            throw new Error('');
-          } else {
-            throw new Error('User not found');
-          }
-        } catch (err) {
-          throw new Error(err);
-        }
-      },
-      credentials: undefined,
-    }),
+    //         if (isPasswordCorrect) {
+    //           return user;
+    //         }
+    //         throw new Error('');
+    //       } else {
+    //         throw new Error('User not found');
+    //       }
+    //     } catch (err) {
+    //       throw new Error(err);
+    //     }
+    //   },
+    //   credentials: undefined,
+    // }),
   ],
 });
 
