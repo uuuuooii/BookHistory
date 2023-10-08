@@ -1,10 +1,12 @@
 'use client';
 
-import React, { useEffect, useState, cache } from 'react';
+import React, {
+  useEffect, useState, cache
+} from 'react';
 import { deletePostData, getBookPostData } from '@/app/lib/api/creatorBookPost';
 import { PostDataProps } from '@/app/lib/api/dto';
-import MapListElement from './mapListElement';
-import * as S from './style';
+import Item from './item';
+import Wrapper from './style';
 
 interface ElementProps {
   isUpload?: boolean;
@@ -16,7 +18,9 @@ interface ElementProps {
 }
 
 const ListElement = ({
-  isUpload, isAdmin, editItem
+  isUpload,
+  isAdmin,
+  editItem,
 }: ElementProps) => {
   const [postData, setPostData] = useState<PostDataProps[]>([]);
   const [isDelete, setIsDelete] = useState<boolean>(false);
@@ -34,18 +38,24 @@ const ListElement = ({
       const res = await getBookPostData();
       setPostData(res.data.reverse());
     });
+
     getPostData();
   }, [isUpload, isDelete]);
 
   return (
-    <S.Wrapper>
-      <MapListElement
-        postData={postData}
-        handleDelete={handleDelete}
-        isAdmin={isAdmin}
-        editItem={editItem}
-      />
-    </S.Wrapper>
+    <Wrapper>
+      {postData.map((item, index) => (
+        <Item
+          key={item._id}
+          postData={postData}
+          index={index}
+          item={item}
+          handleDelete={handleDelete}
+          isAdmin={isAdmin}
+          editItem={editItem}
+        />
+      ))}
+    </Wrapper>
 
   );
 };
