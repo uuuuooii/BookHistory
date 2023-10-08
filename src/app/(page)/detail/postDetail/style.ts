@@ -9,7 +9,7 @@ export const Wrapper = styled.div`
 export const ContentWrapper = styled.article`
   display: grid;
   align-items: center;
-  justify-content: center;
+  /* justify-content: center; */
   max-width: 62.5rem;
   gap: 30px;
   padding: 80px 0;
