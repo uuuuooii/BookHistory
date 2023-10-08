@@ -12,6 +12,9 @@ module.exports = {
       'cloud.google.com',
       'contents.kyobobook.co.kr',
     ],
+    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
+    deviceSizes: [640, 750, 828, 1080, 1200, 1920],
+    formats: ['image/avif', 'image/webp'],
   },
   env: {
     API_BASE_URL: process.env.API_BASE_URL,
