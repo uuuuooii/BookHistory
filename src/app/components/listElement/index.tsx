@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, cache } from 'react';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { deletePostData, getBookPostData } from '@/app/lib/api/creatorBookPost';
@@ -34,11 +34,10 @@ const ListElement = ({
   };
 
   useEffect(() => {
-    const getPostData = async () => {
+    const getPostData = cache(async () => {
       const res = await getBookPostData();
-      console.log(res.data);
       setPostData(res.data.reverse());
-    };
+    });
     getPostData();
   }, [isUpload, isDelete]);
 
