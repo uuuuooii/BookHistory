@@ -33,7 +33,8 @@
     "src/app/lib/api/mongoose/schema/post.ts",
     "__test__/src/components/.test.tsx",
     "completionLog.js",
-    "src/app/components/errorBoundary.js"
+    "src/app/components/errorBoundary.js",
+    "src/app/components/virtualScroll/index.jsx"
   ],
   "exclude": ["node_modules"]
 }

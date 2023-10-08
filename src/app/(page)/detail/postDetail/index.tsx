@@ -28,7 +28,7 @@ const PostDetail = () => {
   }, [postId, postData]);
 
   return (
-    <S.Wrapper>
+    <div>
       <Inner>
         <S.ContentWrapper>
           <S.Picture>
@@ -39,7 +39,7 @@ const PostDetail = () => {
           <S.Content>{selectedPost?.content}</S.Content>
         </S.ContentWrapper>
       </Inner>
-    </S.Wrapper>
+    </div>
   );
 };
 
