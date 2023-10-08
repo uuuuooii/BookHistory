@@ -33,7 +33,13 @@ const MapListElement = ({
           key={item.title}
         >
           <S.ImageWrapper>
-            <Image src={String(item.img)} alt="thumbnail-image" fill />
+            <Image
+              src={String(item.img)}
+              alt="thumbnail-image"
+              fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              priority
+            />
             {isAdmin && editItem && (
               <S.IconWrapper>
                 <S.Icon onClick={() => editItem.onClickSelecteItem(item)}>
