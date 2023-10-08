@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
 import { PostDataProps } from '@/app/lib/api/dto';
 import * as S from '../style';
 
