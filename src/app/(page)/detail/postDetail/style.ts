@@ -2,14 +2,14 @@ import styled from '@emotion/styled';
 
 export const Wrapper = styled.div`
   display: grid;
-  justify-content: center;
+  /* justify-content: center; */
   align-items: center;
 `;
 
 export const ContentWrapper = styled.article`
   display: grid;
   align-items: center;
-  /* justify-content: center; */
+  justify-content: center;
   max-width: 62.5rem;
   gap: 30px;
   padding: 80px 0;
