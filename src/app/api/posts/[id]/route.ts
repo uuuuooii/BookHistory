@@ -3,7 +3,7 @@ import connect from '@/app/lib/api/mongoose/db';
 import post from '@/app/lib/api/mongoose/schema/post';
 
 // eslint-disable-next-line import/prefer-default-export
-export const DELETE = async (request: NextRequest, { params }: any) => {
+export const DELETE = async ({ params }: any) => {
   const { id } = params;
 
   try {
