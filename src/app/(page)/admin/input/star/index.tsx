@@ -23,7 +23,6 @@ const SelectStar = ({ starInput, editItem }: SelectStarProps) => {
           <option
             key={item}
             value={item}
-
           >
             {item}
           </option>
