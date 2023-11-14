@@ -14,7 +14,7 @@ interface ElementProps {
   editItem?: {
     selecteItem: PostDataProps | undefined;
     onClickSelecteItem: (item: PostDataProps) => void;
-  }
+  };
 }
 
 const ListElement = ({

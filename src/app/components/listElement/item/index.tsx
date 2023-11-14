@@ -5,15 +5,15 @@ import { PostDataProps } from '@/app/lib/api/dto';
 import * as S from './style';
 
 interface ItemProps {
-  postData: PostDataProps[]
-  item: PostDataProps
-  index: number
-  handleDelete: (id: string) => Promise<void>
-  isAdmin?: boolean
+  postData: PostDataProps[];
+  item: PostDataProps;
+  index: number;
+  handleDelete: (id: string) => Promise<void>;
+  isAdmin?: boolean;
   editItem?: {
     selecteItem: PostDataProps | undefined;
     onClickSelecteItem: (item: PostDataProps) => void;
-  }
+  };
 }
 
 const Item = ({

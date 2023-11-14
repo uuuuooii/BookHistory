@@ -2,8 +2,6 @@ import { NextRequest, NextResponse } from 'next/server';
 import connect from '@/app/lib/api/mongoose/db';
 import Post from '@/app/lib/api/mongoose/schema/post';
 
-// 무한스크롤 제작 어떻게함?
-
 export const GET = async () => {
   try {
     await connect();
