@@ -2,7 +2,6 @@
 
 import Link from 'next/link';
 import React, { useEffect, useState } from 'react';
-import { useSession } from 'next-auth/react';
 import * as S from './style';
 
 const Header = () => {
@@ -24,9 +23,6 @@ const Header = () => {
     };
   }, []);
 
-  const session = useSession();
-
-  console.log(session);
   return (
     <S.Wrapper isShow={isShow}>
       <S.Navigation>

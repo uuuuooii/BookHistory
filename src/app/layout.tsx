@@ -5,7 +5,6 @@ import globals from './globals';
 import Global from '@/lib/provider/styleProvider';
 import ThemeProvider from '@/lib/provider/themeProvider';
 import ErrorBoundary from '../components/errorBoundary';
-import AuthProvider from '@/lib/provider/authProvider';
 
 export const metadata = {
   title: 'BookHistory',
@@ -22,11 +21,9 @@ const RootLayout = ({
       <body style={{ background: '#141414' }}>
         <ErrorBoundary>
           <ThemeProvider theme={theme}>
-            <AuthProvider>
-              <Global styles={globals} />
-              <Header />
-              {children}
-            </AuthProvider>
+            <Global styles={globals} />
+            <Header />
+            {children}
           </ThemeProvider>
         </ErrorBoundary>
       </body>
