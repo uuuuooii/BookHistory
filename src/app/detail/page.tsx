@@ -1,5 +1,5 @@
 import React from 'react';
-import PostDetail from '@/app/(page)/detail/postDetail';
+import PostDetail from '@/app/detail/postDetail';
 
 const Detailpage = () => {
   return (

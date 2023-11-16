@@ -1,12 +1,12 @@
 'use client';
 
 import React, { useState } from 'react';
-import Inner from '@/app/components/inner';
-import useInput from '@/app/lib/hook/useInput';
+import Inner from '@/components/inner';
+import useInput from '@/lib/hooks/useInput';
 import Preview from './preview';
-import { postBookCreator, putBookUpdate } from '@/app/lib/api/creatorBookPost';
+import { postBookCreator, putBookUpdate } from '@/lib/api/creatorBookPost';
 import AdminInput from './input';
-import useSelecteItem from '@/app/lib/hook/useSelecteItem';
+import useSelecteItem from '@/lib/hooks/useSelecteItem';
 import * as S from './style';
 
 const Admin = () => {

@@ -1,14 +1,14 @@
 import React from 'react';
-import ListElement from '@/app/components/listElement';
+import ListElement from '@/components/listElement';
 import Wrapper from './style';
-import { PostDataProps } from '@/app/lib/api/dto';
+import { PostDataProps } from '@/lib/api/dto';
 
 interface PreviewProps {
   isUpload: boolean,
   editItem: {
     selecteItem: PostDataProps | undefined;
     onClickSelecteItem: (item: PostDataProps) => void;
-  }
+  };
 }
 
 const Preview = ({ isUpload, editItem }: PreviewProps) => {

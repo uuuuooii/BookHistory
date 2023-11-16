@@ -1,11 +1,11 @@
 import React, { ReactNode } from 'react';
-import theme from '@/app/lib/styles/theme';
-import Header from '@/app/components/header';
+import theme from '@/lib/styles/theme';
+import Header from '@/components/header';
 import globals from './globals';
-import Global from '@/app/lib/provider/styleProvider';
-import ThemeProvider from '@/app/lib/provider/themeProvider';
-import AuthProvider from './lib/provider/authProvider';
-import ErrorBoundary from './components/errorBoundary';
+import Global from '@/lib/provider/styleProvider';
+import ThemeProvider from '@/lib/provider/themeProvider';
+import ErrorBoundary from '../components/errorBoundary';
+import AuthProvider from '@/lib/provider/authProvider';
 
 export const metadata = {
   title: 'BookHistory',
@@ -15,7 +15,7 @@ export const metadata = {
 const RootLayout = ({
   children,
 }: {
-  children: ReactNode
+  children: ReactNode;
 }) => {
   return (
     <html lang="en">

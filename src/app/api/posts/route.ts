@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
-import connect from '@/app/lib/api/mongoose/db';
-import Post from '@/app/lib/api/mongoose/schema/post';
+import connect from '@/lib/api/db';
+import Post from '@/lib/api/db/schema/post';
 
 export const GET = async () => {
   try {

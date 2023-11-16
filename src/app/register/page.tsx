@@ -3,8 +3,8 @@
 import Link from 'next/link';
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import Inner from '@/app/components/inner';
-import postRegister from '@/app/lib/api/register';
+import Inner from '@/components/inner';
+import postRegister from '@/lib/api/register';
 import * as S from './style';
 
 const Register = () => {

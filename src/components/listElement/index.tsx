@@ -3,8 +3,8 @@
 import React, {
   useEffect, useState, cache
 } from 'react';
-import { deletePostData, getBookPostData } from '@/app/lib/api/creatorBookPost';
-import { PostDataProps } from '@/app/lib/api/dto';
+import { deletePostData, getBookPostData } from '@/lib/api/creatorBookPost';
+import { PostDataProps } from '@/lib/api/dto';
 import Item from './item';
 import Wrapper from './style';
 
