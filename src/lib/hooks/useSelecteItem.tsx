@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { PostDataProps } from '../api/dto';
 
 const useSelecteItem = () => {
