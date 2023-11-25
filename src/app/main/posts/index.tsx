@@ -44,11 +44,11 @@ const Posts = () => {
       setPostCount(res.data.count);
     });
 
-    if (!isInitialRender.current) {
-      getPostData();
-    } else {
-      isInitialRender.current = false;
-    }
+    // if (!isInitialRender.current) {
+    getPostData();
+    // } else {
+    //   isInitialRender.current = false;
+    // }
   }, [page]);
 
   return (
