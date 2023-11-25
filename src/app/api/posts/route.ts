@@ -3,7 +3,7 @@ import connect from '@/lib/api/db';
 import Post from '@/lib/api/db/schema/post';
 
 export const GET = async (req: NextRequest) => {
-  const ITEM_PER_PAGE = 10;
+  const ITEM_PER_PAGE = 5;
   const page = req.nextUrl.searchParams.get('page') || 1;
 
   try {
