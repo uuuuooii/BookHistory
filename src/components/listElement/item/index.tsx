@@ -8,7 +8,7 @@ interface ItemProps {
   postData: PostDataProps[];
   item: PostDataProps;
   index: number;
-  handleDelete: (id: string) => Promise<void>;
+  handleDelete?: (id: string) => Promise<void>;
   isAdmin?: boolean;
   editItem?: {
     selecteItem: PostDataProps | undefined;
@@ -47,7 +47,7 @@ const Item = ({
             <S.Icon onClick={() => editItem.onClickSelecteItem(item)}>
               <Image src="/images/svg/editeIcon.svg" alt="thumbnail-image" fill />
             </S.Icon>
-            <S.Icon onClick={() => handleDelete(String(item._id))}>
+            <S.Icon onClick={() => handleDelete && `${handleDelete(String(item._id))}`}>
               <Image src="/images/svg/deleteIcon.svg" alt="thumbnail-image" fill />
             </S.Icon>
           </S.IconWrapper>

@@ -4,17 +4,23 @@ import Wrapper from './style';
 import { PostDataProps } from '@/lib/api/dto';
 
 interface PreviewProps {
-  isUpload: boolean,
+  postData: PostDataProps[];
+  handleDelete: (id: string) => Promise<void>;
   editItem: {
     selecteItem: PostDataProps | undefined;
     onClickSelecteItem: (item: PostDataProps) => void;
   };
 }
 
-const Preview = ({ isUpload, editItem }: PreviewProps) => {
+const Preview = ({ postData, editItem, handleDelete }: PreviewProps) => {
   return (
     <Wrapper>
-      <ListElement isUpload={isUpload} editItem={editItem} isAdmin />
+      <ListElement
+        postData={postData}
+        editItem={editItem}
+        handleDelete={handleDelete}
+        isAdmin
+      />
     </Wrapper>
   );
 };
