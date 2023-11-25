@@ -3,24 +3,17 @@
 import React, { useEffect, useState } from 'react';
 import { useSearchParams } from 'next/navigation';
 import Image from 'next/image';
-import { getBookPostData } from '@/lib/api/creatorBookPost';
+import { useRecoilState } from 'recoil';
 import { PostDataProps } from '@/lib/api/dto';
 import Inner from '@/components/inner';
 import * as S from './style';
+import postDataList from '@/lib/recoil/atom';
 
 const PostDetail = () => {
   const [selectedPost, setSelectedPost] = useState<PostDataProps>();
-  const [postData, setPostData] = useState<PostDataProps[]>([]);
+  const [postData, setPostData] = useRecoilState(postDataList);
   const searchParams = useSearchParams();
   const postId = searchParams.get('id');
-
-  useEffect(() => {
-    const getPostData = async () => {
-      const res = await getBookPostData();
-      setPostData(res.data.posts);
-    };
-    getPostData();
-  }, [postId]);
 
   useEffect(() => {
     const data = postData.find((item) => item._id === postId);

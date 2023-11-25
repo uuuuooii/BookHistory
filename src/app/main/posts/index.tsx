@@ -3,6 +3,8 @@
 import React, {
   cache, useEffect, useState, useRef
 } from 'react';
+import { useRecoilState } from 'recoil';
+import postDataList from '@/lib/recoil/atom';
 import ListElement from '@/components/listElement';
 import Inner from '@/components/inner';
 import Wrapper from './style';
@@ -12,10 +14,9 @@ import { getBookPostInfiniteData } from '@/lib/api/creatorBookPost';
 // TODO: 무한스크롤 리팩토링
 // TODO: Observer로 변경
 const Posts = () => {
-  const [postData, setPostData] = useState<PostDataProps[]>([]);
+  const [postData, setPostData] = useRecoilState(postDataList);
   const [postCount, setPostCount] = useState<number>(0);
   const [page, setPage] = useState(1);
-  const isInitialRender = useRef(true);
 
   const handleScroll = () => {
     const { scrollHeight } = document.documentElement;
@@ -44,11 +45,7 @@ const Posts = () => {
       setPostCount(res.data.count);
     });
 
-    // if (!isInitialRender.current) {
     getPostData();
-    // } else {
-    //   isInitialRender.current = false;
-    // }
   }, [page]);
 
   return (
