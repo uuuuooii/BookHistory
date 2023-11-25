@@ -5,16 +5,19 @@ import Wrapper from './style';
 
 interface ElementProps {
   postData: PostDataProps[];
+  postCount: number;
   isAdmin?: boolean;
   handleDelete?: (id: string) => Promise<void>;
   editItem?: {
     selecteItem: PostDataProps | undefined;
     onClickSelecteItem: (item: PostDataProps) => void;
   };
+
 }
 
 const ListElement = ({
   postData,
+  postCount,
   isAdmin,
   handleDelete,
   editItem,
@@ -24,7 +27,7 @@ const ListElement = ({
       {postData.map((item, index) => (
         <Item
           key={item._id}
-          postData={postData}
+          postCount={postCount}
           index={index}
           item={item}
           handleDelete={handleDelete}

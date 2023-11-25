@@ -17,7 +17,7 @@ const PostDetail = () => {
   useEffect(() => {
     const getPostData = async () => {
       const res = await getBookPostData();
-      setPostData(res.data);
+      setPostData(res.data.posts);
     };
     getPostData();
   }, [postId]);
@@ -32,7 +32,7 @@ const PostDetail = () => {
       <Inner>
         <S.ContentWrapper>
           <S.Picture>
-            <Image src={selectedPost?.img || ''} alt="image" fill />
+            {selectedPost && <Image src={String(selectedPost?.img)} alt="image" fill />}
           </S.Picture>
           <S.Title>{selectedPost?.title}</S.Title>
           <S.Data>{selectedPost?.updatedAt?.substring(0, 10)}</S.Data>

@@ -1,20 +1,24 @@
 'use client';
 
-import React, { cache, useEffect, useState } from 'react';
+import React, {
+  cache, useEffect, useRef, useState
+} from 'react';
 import Inner from '@/components/inner';
 import useInput from '@/lib/hooks/useInput';
 import Preview from './preview';
 import {
-  deletePostData, getBookPostData, postBookCreator, putBookUpdate
+  deletePostData, getBookPostInfiniteData, postBookCreator, putBookUpdate
 } from '@/lib/api/creatorBookPost';
 import AdminInput from './input';
 import useSelecteItem from '@/lib/hooks/useSelecteItem';
 import { PostDataProps } from '@/lib/api/dto';
 import * as S from './style';
 
+// TODO: 무한스크롤 리팩토링
 const Admin = () => {
   const [isUpload, setIsUpload] = useState(false);
   const [postData, setPostData] = useState<PostDataProps[]>([]);
+  const [postCount, setPostCount] = useState<number>(0);
   const [isDelete, setIsDelete] = useState<boolean>(false);
 
   const titleInput = useInput();
@@ -22,6 +26,27 @@ const Admin = () => {
   const contentInput = useInput();
   const starInput = useInput();
   const editItem = useSelecteItem();
+
+  const [page, setPage] = useState(1);
+  const isInitialRender = useRef(true);
+
+  const handleScroll = () => {
+    const { scrollHeight } = document.documentElement;
+    const { scrollTop } = document.documentElement;
+    const { clientHeight } = document.documentElement;
+
+    if (scrollTop + clientHeight >= scrollHeight) {
+      // eslint-disable-next-line no-shadow
+      setPage((page) => page + 1);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   const onSubmit: React.FormEventHandler<HTMLFormElement> = async (e) => {
     e.preventDefault();
@@ -68,19 +93,29 @@ const Admin = () => {
     // React cache function
     // React 캐시 기능을 사용하면 함수의 반환 값을 기억할 수 있어 동일한 함수를 한 번만 실행하면서 여러 번 호출할 수 있습니다.
     const getPostData = cache(async () => {
-      const res = await getBookPostData();
-      setPostData(res.data.reverse());
+      const res = await getBookPostInfiniteData(page);
+      setPostData((prev) => [...prev, ...res.data.posts.reverse()]);
+      setPostCount(res.data.count);
     });
 
-    getPostData();
-  }, [isUpload, isDelete]);
+    if (!isInitialRender.current) {
+      getPostData();
+    } else {
+      isInitialRender.current = false;
+    }
+  }, [isUpload, isDelete, page]);
 
   return (
     <S.Form onSubmit={handleSubmit}>
       <Inner>
         <S.Wrapper>
           <S.PreviewWrapper>
-            <Preview postData={postData} editItem={editItem} handleDelete={handleDelete} />
+            <Preview
+              postData={postData}
+              postCount={postCount}
+              editItem={editItem}
+              handleDelete={handleDelete}
+            />
           </S.PreviewWrapper>
           <AdminInput
             titleInput={titleInput}

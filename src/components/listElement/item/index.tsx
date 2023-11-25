@@ -5,7 +5,7 @@ import { PostDataProps } from '@/lib/api/dto';
 import * as S from './style';
 
 interface ItemProps {
-  postData: PostDataProps[];
+  postCount: number;
   item: PostDataProps;
   index: number;
   handleDelete?: (id: string) => Promise<void>;
@@ -17,7 +17,7 @@ interface ItemProps {
 }
 
 const Item = ({
-  postData,
+  postCount,
   item,
   index,
   handleDelete,
@@ -59,7 +59,7 @@ const Item = ({
             {item.title}
             <S.Count>
               &nbsp;#
-              {postData.length - index}
+              {postCount - index}
             </S.Count>
           </S.ItemTitle>
         </h3>

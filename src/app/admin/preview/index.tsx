@@ -5,6 +5,7 @@ import { PostDataProps } from '@/lib/api/dto';
 
 interface PreviewProps {
   postData: PostDataProps[];
+  postCount: number;
   handleDelete: (id: string) => Promise<void>;
   editItem: {
     selecteItem: PostDataProps | undefined;
@@ -12,11 +13,17 @@ interface PreviewProps {
   };
 }
 
-const Preview = ({ postData, editItem, handleDelete }: PreviewProps) => {
+const Preview = ({
+  postData,
+  postCount,
+  editItem,
+  handleDelete
+}: PreviewProps) => {
   return (
     <Wrapper>
       <ListElement
         postData={postData}
+        postCount={postCount}
         editItem={editItem}
         handleDelete={handleDelete}
         isAdmin

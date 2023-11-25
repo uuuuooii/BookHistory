@@ -2,13 +2,25 @@ import { NextRequest, NextResponse } from 'next/server';
 import connect from '@/lib/api/db';
 import Post from '@/lib/api/db/schema/post';
 
-export const GET = async () => {
+export const GET = async (req: NextRequest) => {
+  const ITEM_PER_PAGE = 10;
+  const page = req.nextUrl.searchParams.get('page') || 1;
+
   try {
     await connect();
+    const count = await Post.estimatedDocumentCount({});
 
-    const posts = await Post.find();
+    const posts = await Post.find()
+      .sort({ createdAt: -1 }) // createdAt 필드를 기준으로 내림차순 정렬
+      .limit(ITEM_PER_PAGE)
+      .skip(ITEM_PER_PAGE * (Number(page) - 1));
 
-    return new NextResponse(JSON.stringify(posts), {
+    const responsePayload = {
+      count,
+      posts,
+    };
+
+    return new NextResponse(JSON.stringify(responsePayload), {
       status: 200,
       headers: {
         'Access-Control-Allow-Origin': '*',
