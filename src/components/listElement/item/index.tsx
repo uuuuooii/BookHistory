@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 import { PostDataProps } from '@/lib/api/dto';
 import * as S from './style';
 
@@ -24,12 +24,6 @@ const Item = ({
   isAdmin,
   editItem
 }: ItemProps) => {
-  const router = useRouter();
-
-  const onPageHandle = (id: string) => {
-    router.push(`/detail?id=${id}`);
-  };
-
   return (
     <S.PostsItem
       key={item.title}
@@ -53,24 +47,26 @@ const Item = ({
           </S.IconWrapper>
         )}
       </S.ImageWrapper>
-      <S.Contents onClick={() => onPageHandle(String(item._id))}>
-        <h3>
-          <S.ItemTitle>
-            {item.title}
-            <S.Count>
-              &nbsp;#
-              {postCount - index}
-            </S.Count>
-          </S.ItemTitle>
-        </h3>
-        <div>
-          <S.Star>{item.star}</S.Star>
-        </div>
-        <div>
-          <S.Desc>{item.content}</S.Desc>
-        </div>
-        <S.Data>{item.updatedAt?.substring(0, 10)}</S.Data>
-      </S.Contents>
+      <Link href={`/detail/${item._id}`}>
+        <S.Contents>
+          <h3>
+            <S.ItemTitle>
+              {item.title}
+              <S.Count>
+                &nbsp;#
+                {postCount - index}
+              </S.Count>
+            </S.ItemTitle>
+          </h3>
+          <div>
+            <S.Star>{item.star}</S.Star>
+          </div>
+          <div>
+            <S.Desc>{item.content}</S.Desc>
+          </div>
+          <S.Data>{item.updatedAt?.substring(0, 10)}</S.Data>
+        </S.Contents>
+      </Link>
     </S.PostsItem>
   );
 };

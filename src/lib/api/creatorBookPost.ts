@@ -1,9 +1,18 @@
 import axios, { AxiosResponse } from 'axios';
-import { deletePostItem, BOOK_POST_DATA_URL, getBookData } from './url';
+import {
+  deletePostItem,
+  BOOK_POST_DATA_URL,
+  getBookData,
+  getBookDetail,
+} from './url';
 import { PostDataProps } from './dto';
 
 export const getBookPostData = async (): Promise<AxiosResponse> => {
   return axios.get(BOOK_POST_DATA_URL);
+};
+
+export const getDetailBookData = async (id: string): Promise<AxiosResponse> => {
+  return axios.get(getBookDetail(id));
 };
 
 export const getBookPostInfiniteData = async (

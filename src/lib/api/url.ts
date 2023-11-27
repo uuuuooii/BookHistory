@@ -4,4 +4,6 @@ export const REGISTER_URL = '/api/auth/register';
 
 export const getBookData = (page: number) => `/api/posts/?page=${page}`;
 
+export const getBookDetail = (id: string) => `/api/posts/${id}`;
+
 export const deletePostItem = (id: string) => `/api/posts/${id}`;

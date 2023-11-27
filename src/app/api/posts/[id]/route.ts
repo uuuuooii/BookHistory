@@ -2,7 +2,29 @@ import { NextRequest, NextResponse } from 'next/server';
 import connect from '@/lib/api/db';
 import Post from '@/lib/api/db/schema/post';
 
-// eslint-disable-next-line import/prefer-default-export
+export const GET = async (
+  request: NextRequest,
+  { params }: { params: { id: string } }
+) => {
+  const { id } = params;
+
+  try {
+    await connect();
+
+    const posts = await Post.findById(id);
+
+    return new NextResponse(JSON.stringify(posts), {
+      status: 200,
+      headers: {
+        'Access-Control-Allow-Origin': '*',
+      },
+    });
+  } catch (err) {
+    console.error(err);
+    return new NextResponse('Database Error', { status: 500 });
+  }
+};
+
 export const DELETE = async (
   request: NextRequest,
   { params }: { params: { id: string } }
