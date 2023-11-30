@@ -16,7 +16,7 @@ export const Wrapper = styled.div`
       #141414 68%,
       #141414
     ),
-    url('/images/background.jpeg');
+    url('/images/background.webp');
   background-position: 50%;
   background-size: cover;
 `;
@@ -31,7 +31,7 @@ export const TitleContent = styled.div`
   padding-bottom: 30px;
 `;
 
-export const Title = styled.h3`
+export const Title = styled.h2`
   color: ${({ theme }) => theme.colors.neutral.white};
   font-size: 1.75rem;
   font-weight: 700;

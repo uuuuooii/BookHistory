@@ -1,10 +1,10 @@
 const neutral = {
   black: '#141414',
-  white: '#DADBDB',
+  white: '#EDEDED',
 };
 
 const gray = {
-  gray01: '#757575',
+  gray01: '#575757',
   gray02: '#424242',
 };
 

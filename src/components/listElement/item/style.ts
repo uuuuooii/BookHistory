@@ -55,7 +55,7 @@ export const Contents = styled.div`
   cursor: pointer;
 `;
 
-export const ItemTitle = styled.a`
+export const ItemTitle = styled.h4`
   font-size: 1.125rem;
   font-weight: 500;
 `;
