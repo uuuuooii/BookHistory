@@ -11,7 +11,7 @@ interface DetailProps {
   params: { id: string; };
 }
 
-const page = ({ params: { id } }: DetailProps) => {
+const Detail = ({ params: { id } }: DetailProps) => {
   const [postData, setPostData] = useState<PostDataProps>();
 
   useEffect(() => {
@@ -21,7 +21,7 @@ const page = ({ params: { id } }: DetailProps) => {
     });
 
     getPostData();
-  }, [page]);
+  }, []);
 
   return (
     <div>
@@ -39,4 +39,4 @@ const page = ({ params: { id } }: DetailProps) => {
   );
 };
 
-export default page;
+export default Detail;
