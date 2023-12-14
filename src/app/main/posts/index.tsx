@@ -8,7 +8,6 @@ import postDataList from '@/lib/recoil/atom';
 import ListElement from '@/components/listElement';
 import Inner from '@/components/inner';
 import Wrapper from './style';
-import { PostDataProps } from '@/lib/api/dto';
 import { getBookPostInfiniteData } from '@/lib/api/creatorBookPost';
 
 // TODO: 무한스크롤 리팩토링
