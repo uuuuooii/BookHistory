@@ -32,7 +32,6 @@ const AdminInput = ({
 
   return (
     <S.InputWrapper>
-
       <S.Input
         placeholder="책 제목을 입력해주세요"
         value={editItem?.title || titleInput.inputValue}
