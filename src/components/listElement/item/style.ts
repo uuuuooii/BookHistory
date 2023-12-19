@@ -56,6 +56,7 @@ export const Contents = styled.div`
 `;
 
 export const ItemTitle = styled.h4`
+  color: ${({ theme }) => theme.colors.gray.gray02};
   font-size: 1.125rem;
   font-weight: 500;
 `;
