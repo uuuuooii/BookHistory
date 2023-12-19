@@ -5,7 +5,7 @@ export const PostsItem = styled.li`
   width: 394px;
   height: 298px;
   border-radius: 10px;
-  background: ${({ theme }) => theme.colors.neutral.white};
+  background: white;
 
   @media screen and (max-width: 899px) {
     width: 350px;
