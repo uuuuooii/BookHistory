@@ -1,7 +1,7 @@
 import React, { ReactNode } from 'react';
 import theme from '@/lib/styles/theme';
 import Header from '@/components/header';
-import globals from './globals';
+import globals from '../lib/styles/globals';
 import Global from '@/lib/provider/styleProvider';
 import ThemeProvider from '@/lib/provider/themeProvider';
 import ErrorBoundary from '../components/errorBoundary';

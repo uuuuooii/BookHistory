@@ -111,7 +111,7 @@ const globals = css`
     //========================= //
     font-weight: normal;
     vertical-align: baseline;
-    color: #17171a;
+    color: #fff;
   }
   /* HTML5 display-role reset for older browsers */
   article,

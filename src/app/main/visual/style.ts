@@ -16,7 +16,7 @@ export const Wrapper = styled.div`
       #141414 68%,
       #141414
     ),
-    url('/images/background.webp');
+    url('/images/background1.webp');
   background-position: 50%;
   background-size: cover;
 `;
