@@ -24,18 +24,16 @@ const Detail = ({ params: { id } }: DetailProps) => {
   }, []);
 
   return (
-    <div>
-      <Inner>
-        <S.ContentWrapper>
-          <S.Picture>
-            {postData && <Image src={String(postData?.img)} alt="image" fill />}
-          </S.Picture>
-          <S.Title>{postData?.title}</S.Title>
-          <S.Data>{postData?.updatedAt?.substring(0, 10)}</S.Data>
-          <S.Content>{postData?.content}</S.Content>
-        </S.ContentWrapper>
-      </Inner>
-    </div>
+    <Inner>
+      <S.ContentWrapper>
+        <S.Picture>
+          {postData && <Image src={String(postData?.img)} alt="image" fill />}
+        </S.Picture>
+        <S.Title>{postData?.title}</S.Title>
+        <S.Data>{postData?.updatedAt?.substring(0, 10)}</S.Data>
+        <S.Content>{postData?.content}</S.Content>
+      </S.ContentWrapper>
+    </Inner>
   );
 };
 
