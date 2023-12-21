@@ -1,4 +1,5 @@
 import React, { ReactNode } from 'react';
+import { Analytics } from '@vercel/analytics/react';
 import theme from '@/lib/styles/theme';
 import Header from '@/components/header';
 import globals from '../lib/styles/globals';
@@ -26,6 +27,7 @@ const RootLayout = ({
               <Global styles={globals} />
               <Header />
               {children}
+              <Analytics />
             </ThemeProvider>
           </ErrorBoundary>
         </RecoilProvider>
