@@ -1,7 +1,7 @@
 'use client';
 
 import React, {
-  cache, useEffect, useState, useRef
+  cache, useEffect, useState
 } from 'react';
 import { useRecoilState } from 'recoil';
 import postDataList from '@/lib/recoil/atom';
