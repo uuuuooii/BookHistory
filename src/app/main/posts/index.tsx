@@ -12,6 +12,7 @@ import { getBookPostInfiniteData } from '@/lib/api/creatorBookPost';
 
 // TODO: 무한스크롤 리팩토링
 // TODO: Observer로 변경
+// TODO: 같은 데이터 반복으로 나오는 거 확인
 const Posts = () => {
   const [postData, setPostData] = useRecoilState(postDataList);
   const [postCount, setPostCount] = useState<number>(0);
