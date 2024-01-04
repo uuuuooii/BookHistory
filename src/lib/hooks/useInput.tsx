@@ -1,9 +1,9 @@
-import { ChangeEvent, useState } from 'react';
+import React, { useState } from 'react';
 
 const useInput = (defaultValue?: string) => {
   const [inputValue, setInputValue] = useState<string>(defaultValue ?? '');
 
-  const onChangeInput = (e: ChangeEvent<HTMLInputElement>) => {
+  const onChangeInput = (e: { currentTarget: { value: React.SetStateAction<string>; }; }) => {
     setInputValue(e.currentTarget.value);
   };
 
